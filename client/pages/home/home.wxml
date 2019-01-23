@@ -1,0 +1,13 @@
+<!--pages/home/home.wxml-->
+<view class='home-info'>
+  <view></view>
+  <view class='weather'>
+    <text class='weather-text'>{{ weather }}</text>
+  </view>
+  <view class='location'>
+    <text>{{ location }}</text>
+  </view>
+  <view class='time'>
+    <text>{{ time }}</text>
+  </view>
+</view>

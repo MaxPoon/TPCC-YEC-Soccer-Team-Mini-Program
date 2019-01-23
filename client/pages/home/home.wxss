@@ -1,0 +1,28 @@
+/* pages/home/home.wxss */
+
+.home-info {
+  width: 100%;
+  height: 1000px;
+  margin: 0px !important; 
+  background-color:#1AAD19;
+}
+.weather {
+  color: #FFF;
+  padding-top: 60px;
+  text-align: center;
+  font-size: 40px;
+}
+.location {
+  color: #FFF;
+  font-size: 60px;
+  text-align: center;
+  margin-top: 20px;
+  margin-bottom: 30px;
+}
+.time {
+  color: #FFF;
+  font-size: 60px;
+  text-align: center;
+  margin-top: 20px;
+  margin-bottom: 30px;
+}

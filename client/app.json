@@ -1,5 +1,7 @@
 {
   "pages":[
+    "pages/home/home",
+    "pages/userinfo/userinfo",
     "pages/index/index",
     "pages/addCgi/addCgi"
   ],
@@ -9,5 +11,22 @@
     "navigationBarBackgroundColor": "#F6F6F6",
     "navigationBarTitleText": "Wafer Quick Start",
     "navigationBarTextStyle":"black"
+  },
+  "tabBar": {
+    "list": [
+      {
+        "pagePath": "pages/home/home",
+        "text": "通知",
+        "iconPath": "pages/images/tabbar/inactive.png",
+        "selectedIconPath": "pages/images/tabbar/active.png"
+      },
+      {
+        "pagePath": "pages/userinfo/userinfo",
+        "text": "我",
+        "iconPath": "pages/images/tabbar/inactive.png",
+        "selectedIconPath": "pages/images/tabbar/active.png"
+      }
+
+    ]
   }
 }
