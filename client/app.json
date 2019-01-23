@@ -1,8 +1,7 @@
 {
   "pages":[
-    "pages/home/home",
-    "pages/userinfo/userinfo",
     "pages/index/index",
+    "pages/userinfo/userinfo",
     "pages/addCgi/addCgi"
   ],
   "window":{
@@ -15,7 +14,7 @@
   "tabBar": {
     "list": [
       {
-        "pagePath": "pages/home/home",
+        "pagePath": "pages/index/index",
         "text": "通知",
         "iconPath": "pages/images/tabbar/inactive.png",
         "selectedIconPath": "pages/images/tabbar/active.png"
@@ -26,7 +25,6 @@
         "iconPath": "pages/images/tabbar/inactive.png",
         "selectedIconPath": "pages/images/tabbar/active.png"
       }
-
     ]
   }
 }
