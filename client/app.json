@@ -1,13 +1,37 @@
 {
   "pages":[
     "pages/index/index",
-    "pages/addCgi/addCgi"
+    "pages/me/me",
+    "pages/memories/memories",
+    "pages/editntc/editntc"
   ],
   "window":{
-    "backgroundColor":"#F6F6F6",
+    "backgroundColor":"#73a96b",
     "backgroundTextStyle":"light",
-    "navigationBarBackgroundColor": "#F6F6F6",
-    "navigationBarTitleText": "Wafer Quick Start",
+    "navigationBarBackgroundColor": "#73a96b",
+    "navigationBarTitleText": "TPCC YEC Soccer Team",
     "navigationBarTextStyle":"black"
+  },
+  "tabBar": {
+    "list": [
+      {
+        "pagePath": "pages/index/index",
+        "text": "Home",
+        "iconPath": "pages/images/tabbar/inactive.png",
+        "selectedIconPath": "pages/images/tabbar/active.png"
+      },
+      {
+        "pagePath": "pages/memories/memories",
+        "text": "Memories",
+        "iconPath": "pages/images/tabbar/inactive.png",
+        "selectedIconPath": "pages/images/tabbar/active.png"
+      },
+      {
+        "pagePath": "pages/me/me",
+        "text": "Me",
+        "iconPath": "pages/images/tabbar/inactive.png",
+        "selectedIconPath": "pages/images/tabbar/active.png"
+      }
+    ]
   }
 }
