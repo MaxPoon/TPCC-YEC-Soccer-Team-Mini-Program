@@ -1,8 +1,8 @@
 {
   "pages":[
     "pages/index/index",
-    "pages/userinfo/userinfo",
-    "pages/photo/photo",
+    "pages/me/me",
+    "pages/memories/memories",
     "pages/editntc/editntc"
   ],
   "window":{
@@ -16,19 +16,19 @@
     "list": [
       {
         "pagePath": "pages/index/index",
-        "text": "通知",
+        "text": "Home",
         "iconPath": "pages/images/tabbar/inactive.png",
         "selectedIconPath": "pages/images/tabbar/active.png"
       },
       {
-        "pagePath": "pages/photo/photo",
-        "text": "回顾",
+        "pagePath": "pages/memories/memories",
+        "text": "Memories",
         "iconPath": "pages/images/tabbar/inactive.png",
         "selectedIconPath": "pages/images/tabbar/active.png"
       },
       {
-        "pagePath": "pages/userinfo/userinfo",
-        "text": "我",
+        "pagePath": "pages/me/me",
+        "text": "Me",
         "iconPath": "pages/images/tabbar/inactive.png",
         "selectedIconPath": "pages/images/tabbar/active.png"
       }
