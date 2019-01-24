@@ -7,9 +7,17 @@ Page({
   data: {
     location: "NUS",
     weather: "Mostly Cloudy",
-    time: "1:30pm"
+    detailed: "Lower Field",
+    time: "Training starts at 1:30pm"
   },
-
+  /**
+   * 跳转到编辑页面
+   */
+  JumpToEdit: function () {
+    wx.navigateTo({
+      url: '../editntc/editntc'
+    })
+  },
   /**
    * 生命周期函数--监听页面加载
    */
