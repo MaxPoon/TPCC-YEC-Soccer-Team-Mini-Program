@@ -4,22 +4,22 @@
     <text class='title-text'>Update training information</text>
   </view>
   <view class="form-container">
-  <form class="notice-form" bindsubmit="formSubmit">
+    <form class="notice-form" bindsubmit="formSubmit">
       <view class="form-element">
-      <view class="section__title">Training location</view>
-      <input name="location" placeholder="NUS" />
+        <view class="section-title">Training location</view>
+          <input name="location" placeholder="NUS" />
       </view>
       <view class="form-element">
-      <view class="section__title">Detailed location</view>
-      <input name="detaild" placeholder="Lower Field" />
+        <view class="section-title">Detailed location</view>
+        <input name="detaild" placeholder="Lower Field" />
       </view>
       <view class="form-element">
-      <view class="section__title">Start time</view>
-      <input name="time" placeholder="1:30pm" />
+        <view class="section-title">Start time</view>
+        <input name="time" placeholder="1:30pm" />
       </view>
-      <view class="btn-area">
-      <button form-type="submit">Submit</button>
-    </view>
-  </form>
+      <view class="btn-area">
+        <button class="submit-btn" form-type="submit">Submit</button>
+      </view>
+    </form>
   </view>
 </view>

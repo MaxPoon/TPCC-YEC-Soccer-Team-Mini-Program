@@ -24,25 +24,33 @@
 }
 
 .form-container{
-  width:100%;
-  height:500px;
+  height:600px;
+  padding: 30px;
 }
 
 .form-element{
-  padding: 20px 0;
+  padding: 20px 0px 20px;
   height:auto;
   border-bottom: 3rpx solid #e9e9e9;
-
 }
 
-.form-element .section__title, {
-float:left;
-padding:0 10px;
-width:180px;
-box-sizing:border-box;
+.section-title, {
+  box-sizing:border-box;
 }
 
-.form-element input{
-  width:180px;
+input{
+  width:auto;
   float:left;
+  padding-top: 10px;
 }
+
+.btn-area {
+  text-align: center;
+}
+
+.submit-btn {
+  width: 60%;
+}
+
+
+
