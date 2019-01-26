@@ -1,17 +1,16 @@
 //app.js
+var qcloud = require('./vendor/wafer2-client-sdk/index');
+var config = require('./config');
+
 App({
   onLaunch: function() {
     var that = this;
+    qcloud.setLoginUrl(config.service.loginUrl);
 
-    // Login and get the user information
-    wx.login({
+    // Login and store the user information
+    qcloud.login({
       success(res) {
-        wx.getUserInfo({
-          withCredentials: true,
-          success: function(res) {
-            that.user = res;
-          }
-        });
+        that.userInfo = res;
       }
     });
   }
