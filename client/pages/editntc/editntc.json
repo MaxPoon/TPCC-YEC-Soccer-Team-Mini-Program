@@ -1,3 +1,12 @@
 {
-  "usingComponents": {}
+  "usingComponents": {},
+  
+    "backgroundColor": "#ffffff",
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#f6f6f6",
+    "navigationBarTitleText": "TPCC YEC Soccer Team",
+    "navigationBarTextStyle": "black",
+    
+  "disableScroll": true
+  
 }

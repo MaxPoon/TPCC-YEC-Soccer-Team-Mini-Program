@@ -8,7 +8,7 @@ Page({
     location: "NUS",
     weather: "Mostly Cloudy",
     detailed: "Lower Field",
-    time: "Training starts at 1:30pm"
+    time: "1:30pm"
   },
   /**
    * 跳转到编辑页面

@@ -13,6 +13,6 @@
     <text>{{ detailed }}</text>
   </view>
   <view class='time'>
-    <text>{{ time }}</text>
+    <text>Training starts at {{ time }}</text>
   </view>
 </view>

@@ -1,6 +1,11 @@
 // pages/userinfo/userinfo.js
 Page({
 
+  formSubmit: function (e) {
+    console.log('the form of editing notice was submitted：', e.detail.value)
+  },
+
+
   /**
    * 页面的初始数据
    */
