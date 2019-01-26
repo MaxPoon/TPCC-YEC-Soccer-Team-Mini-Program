@@ -44,6 +44,10 @@ input{
   padding-top: 10px;
 }
 
+.picker {
+  padding-top: 10px;
+}
+
 .btn-area {
   text-align: center;
 }
@@ -51,6 +55,3 @@ input{
 .submit-btn {
   width: 60%;
 }
-
-
-

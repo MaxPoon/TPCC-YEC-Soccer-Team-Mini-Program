@@ -15,7 +15,16 @@
       </view>
       <view class="form-element">
         <view class="section-title">Start time</view>
-        <input name="time" placeholder="1:30pm" />
+        <picker
+          name="time"
+          mode="time"
+          value="{{time}}"
+          start="12:00"
+          end="16:00"
+          bindchange="bindTimeChange"
+        >
+          <view class="picker"> Sunday: {{time}} </view>
+        </picker>
       </view>
       <view class="btn-area">
         <button class="submit-btn" form-type="submit">Submit</button>
