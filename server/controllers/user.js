@@ -31,6 +31,7 @@ async function put(ctx) {
   }
 }
 
+// Find user by open ID
 async function findUser(openId) {
   var user = await mysql(userTableName).where({ OpenId: openId }).first();
   return user;
