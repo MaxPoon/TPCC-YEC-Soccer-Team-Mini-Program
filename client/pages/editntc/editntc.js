@@ -1,6 +1,14 @@
 // pages/userinfo/userinfo.js
 Page({
 
+  formSubmit: function (e) {},
+
+  bindTimeChange(e) {
+    this.setData({
+      time: e.detail.value
+    })
+  },
+
   /**
    * 页面的初始数据
    */
