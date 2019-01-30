@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 <!--index.wxml-->
 <view class="container">
 
@@ -61,7 +60,3 @@
   </view>
 
 </view>
-=======
-<!--pages/me/me.wxml-->
-<text>pages/me/me.wxml</text>
->>>>>>> TPCC/master

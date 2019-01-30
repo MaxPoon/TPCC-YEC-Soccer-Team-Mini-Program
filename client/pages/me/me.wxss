@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 /**index.wxss**/
 .container {
   height: 100%;
@@ -24,13 +23,7 @@
   border-color:black;
 }
 
+
 .infoInput {
   background-color: rgb(209, 209, 209);
 }
-
-.infoInput input {
-  position: relative;
-}
-=======
-/* pages/me/me.wxss */
->>>>>>> TPCC/master
