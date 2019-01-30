@@ -1,11 +1,43 @@
-module.exports = async (ctx, next) => {
-    // 通过 Koa 中间件进行登录态校验之后
-    // 登录信息会被存储到 ctx.state.$wxInfo
-    // 具体查看：
-    if (ctx.state.$wxInfo.loginState === 1) {
-        // loginState 为 1，登录态校验成功
-        ctx.state.data = ctx.state.$wxInfo.userinfo
-    } else {
-        ctx.state.code = -1
-    }
+const assert = require('assert');
+const { mysql } = require('../qcloud.js');
+const userTableName = "User";
+
+// Get user by Id
+async function get(ctx) {
+  var openId = ctx.query.OpenId;
+  var user = await findUser(openId);
+  if (!user) {
+    ctx.response.status = 404;
+  } else {
+    ctx.body = user;
+  }
 }
+
+// Update user
+async function put(ctx) {
+  var user = ctx.request.body;
+
+  // Make sure the user is updating its own information
+  assert(ctx.state.$wxInfo.userinfo.openId === user.OpenId);
+
+  // Check if the user exists in the database
+  var existingUser = await findUser(user.OpenId);
+  if (existingUser) {
+    user.IsAdmin = existingUser.IsAdmin;
+    await mysql(userTableName).where({ OpenId: user.OpenId}).update(user);
+  } else {
+    user.IsAdmin = false;
+    await mysql(userTableName).insert(user);
+  }
+}
+
+// Find user by open ID
+async function findUser(openId) {
+  var user = await mysql(userTableName).where({ OpenId: openId }).first();
+  return user;
+}
+
+module.exports = {
+  get,
+  put
+};
