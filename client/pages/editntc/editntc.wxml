@@ -1,0 +1,34 @@
+<!--pages/userinfo/userinfo.wxml-->
+<view class='edit-notice'>
+  <view class='title'>
+    <text class='title-text'>Update training information</text>
+  </view>
+  <view class="form-container">
+    <form class="notice-form" bindsubmit="formSubmit">
+      <view class="form-element">
+        <view class="section-title">Training location</view>
+          <input name="location" placeholder="NUS" />
+      </view>
+      <view class="form-element">
+        <view class="section-title">Detailed location</view>
+        <input name="detaild" placeholder="Lower Field" />
+      </view>
+      <view class="form-element">
+        <view class="section-title">Start time</view>
+        <picker
+          name="time"
+          mode="time"
+          value="{{time}}"
+          start="12:00"
+          end="16:00"
+          bindchange="bindTimeChange"
+        >
+          <view class="picker"> Sunday: {{time}} </view>
+        </picker>
+      </view>
+      <view class="btn-area">
+        <button class="submit-btn" form-type="submit">Submit</button>
+      </view>
+    </form>
+  </view>
+</view>

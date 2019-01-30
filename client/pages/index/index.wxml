@@ -1,0 +1,18 @@
+<!--index.wxml-->
+<view class='home-info'>
+  <view class='edit'>
+    <button class='edit-notice' bindtap='JumpToEdit'>Edit</button>
+  </view>
+  <view class='weather'>
+    <text class='weather-text'>{{ weather }}</text>
+  </view>
+  <view class='location'>
+    <text>{{ location }}</text>
+  </view>
+  <view class='detailed'>
+    <text>{{ detailed }}</text>
+  </view>
+  <view class='time'>
+    <text>Training starts at {{ time }}</text>
+  </view>
+</view>

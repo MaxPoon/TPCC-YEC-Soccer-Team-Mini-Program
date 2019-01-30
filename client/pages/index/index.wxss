@@ -1,0 +1,49 @@
+/**index.wxss**/
+.home-info {
+  width: 100%;
+  height: 1000px;
+  margin: 0px !important; 
+  background-color:#73a96b;
+}
+.edit{
+  height:60px;
+  width:100%;
+}
+.edit-notice {
+  background-color: #73a96b;
+  float:right;
+  width: 30%;
+  text-align: center;
+  color: #FFF;
+  padding-right: 10px;
+  font-size: 25px;
+} 
+.edit-notice::after {
+  border: 0;
+}
+.weather {
+  display:block;
+  color: #FFF;
+  padding-top: 20px;
+  text-align: center;
+  font-size: 40px;
+}
+.location {
+  color: #FFF;
+  font-size: 60px;
+  text-align: center;
+  margin-top: 20px;
+}
+.detailed {
+  color: #FFF;
+  text-align: center;
+  font-size: 30px;
+  margin-bottom: 40px;
+}
+.time {
+  color: #FFF;
+  font-size: 25px;
+  text-align: center;
+  margin-top: 20px;
+  margin-bottom: 30px;
+}
