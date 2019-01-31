@@ -11,7 +11,13 @@ App({
     qcloud.login({
       success(res) {
         that.userInfo = res;
+        console.log(getApp.userInfo);
+        console.log(res);
       }
     });
+
+    
   }
+
+  
 })
