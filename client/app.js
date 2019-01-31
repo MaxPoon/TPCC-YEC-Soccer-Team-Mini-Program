@@ -1,6 +1,6 @@
 //app.js
-var qcloud = require('./bower_components/wafer-client-sdk/index.js');
-var config = require('./config');
+const qcloud = require('wafer2-client-sdk');
+const config = require('./config');
 
 App({
   onLaunch: function() {
