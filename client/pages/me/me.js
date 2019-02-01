@@ -20,15 +20,13 @@ Page({
 
 
   onLoad: function () {
-    
     this.setData({
       userInfo: app.userInfo
     })
-    console.log(this.data.userInfo)
     
     if (this.data.userInfo == null) {
         // if there is no userinfo yet
-        //setTimeout(function () {}, 100)
+        setTimeout(function () {}, 100)
     } 
   },
  
