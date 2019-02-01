@@ -1,74 +1,87 @@
 // pages/userinfo/userinfo.js
 Page({
+  data: {
+    multiArray: [['Saturday', 'Sunday'], [10, 11, 12, 13, 14, 15, 16], ['00', 10, 20, 30, 40, 50]], // 0 was changed to "00"
+    objectMultiArray: [
+      [
+        {
+          id: 0,
+          name: 'Sunday'
+        },
+        {
+          id: 1,
+          name: 'Saturday'
+        }
+      ], [
+        {
+          id: 0,
+          name: 10
+        },
+        {
+          id: 1,
+          name: 11
+        },
+        {
+          id: 2,
+          name: 12
+        },
+        {
+          id: 3,
+          name: 13
+        },
+        {
+          id: 3,
+          name: 14
+        },
+        {
+          id: 3,
+          name: 15
+        },
+        {
+          id: 3,
+          name: 16
+        }
+      ], [
+        {
+          id: 0,
+          name: "00" //to display the time
+        },
+        {
+          id: 1,
+          name: 10
+        },
+        {
+          id: 1,
+          name: 20
+        },
+        {
+          id: 1,
+          name: 30
+        },
+        {
+          id: 1,
+          name: 40
+        },
+        {
+          id: 1,
+          name: 50
+        }
+      ]
+    ],
+    multiIndex: [0, 0, 0],
 
-  formSubmit: function (e) {},
-
-  bindTimeChange(e) {
+  },
+  bindMultiPickerChange(e) {
+    console.log('Time Choice', e.detail.value)
     this.setData({
-      time: e.detail.value
+      multiIndex: e.detail.value
     })
   },
 
-  /**
-   * 页面的初始数据
-   */
-  data: {
-
+  formSubmit: function (e) {
+    console.log('Form Changed Value', e.detail.value)
+    wx:wx.navigateBack({
+      delta: 1,
+    })
   },
-
-  /**
-   * 生命周期函数--监听页面加载
-   */
-  onLoad: function (options) {
-
-  },
-
-  /**
-   * 生命周期函数--监听页面初次渲染完成
-   */
-  onReady: function () {
-
-  },
-
-  /**
-   * 生命周期函数--监听页面显示
-   */
-  onShow: function () {
-
-  },
-
-  /**
-   * 生命周期函数--监听页面隐藏
-   */
-  onHide: function () {
-
-  },
-
-  /**
-   * 生命周期函数--监听页面卸载
-   */
-  onUnload: function () {
-
-  },
-
-  /**
-   * 页面相关事件处理函数--监听用户下拉动作
-   */
-  onPullDownRefresh: function () {
-
-  },
-
-  /**
-   * 页面上拉触底事件的处理函数
-   */
-  onReachBottom: function () {
-
-  },
-
-  /**
-   * 用户点击右上角分享
-   */
-  onShareAppMessage: function () {
-
-  }
 })

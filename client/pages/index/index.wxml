@@ -2,6 +2,7 @@
 <view class='home-info'>
   <view class='Add'>
     <button class='new-notice' bindtap='JumpToEdit'>Add</button>
+    <!--function not added yet-->
   </view>
   <view class='edit'>
     <button class='edit-notice' bindtap='JumpToEdit'>Edit</button>
