@@ -9,6 +9,15 @@
   height:60px;
   width:100%;
 }
+.new-notice {
+  background-color: #73a96b;
+  float:left;
+  width: 30%;
+  text-align: center;
+  color: #FFF;
+  padding-right: 10px;
+  font-size: 25px;
+} 
 .edit-notice {
   background-color: #73a96b;
   float:right;
@@ -19,6 +28,9 @@
   font-size: 25px;
 } 
 .edit-notice::after {
+  border: 0;
+}
+.new-notice::after {
   border: 0;
 }
 .weather {
