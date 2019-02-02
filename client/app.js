@@ -11,13 +11,37 @@ App({
     qcloud.login({
       success(res) {
         that.userInfo = res;
-        console.log(getApp.userInfo);
-        console.log(res);
+        console.log(that.userInfo);
+
+        qcloud.request({
+          url: 'https://aeoo5f7q.qcloud.la/weapp/user?OpenID=' + that.userInfo.openId,
+          data: {
+            OpenID: that.userInfo.openId
+          },
+          method: 'GET', // OPTIONS, GET, HEAD, POST, PUT, DELETE, TRACE, CONNECT
+          
+          success: function (res) {
+            console.log(res);
+          },
+          fail: function (err) {
+            // fail
+            console.log('failed to get userinfo');
+            console.log(err)
+          },
+          complete: function () {
+            // complete
+            console.log('complete wx.request')
+          }
+        });
+      },
+      fail (err) {
+        console.log('fail to login');
+        console.log(err)
       }
     });
 
+
+    
     
   }
-
-  
 })

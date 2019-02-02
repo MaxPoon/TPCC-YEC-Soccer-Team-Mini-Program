@@ -18,6 +18,7 @@ Page({
 
 
   onLoad: function () {
+    console.log(app.userInfo)
     this.setData({
       userInfo: app.userInfo
     })
