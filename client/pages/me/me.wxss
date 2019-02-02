@@ -1,1 +1,29 @@
-/* pages/me/me.wxss */
+/**index.wxss**/
+.container {
+  height: 100%;
+  width:100%;
+}
+
+.userinfo {
+  height:320rpx;
+  width: 100%;
+  background-color: rgb(207, 207, 207);
+}
+
+.userinfo text {
+  font-size: 50rpx;
+}
+
+.userinfo-avatar {
+  width: 150rpx;
+  height: 150rpx;
+  margin: 35rpx;
+  border-radius: 50%;
+  border: 3rpx solid;
+  border-color:black;
+  top: 80rpx;
+}
+
+.infoInput {
+  background-color: rgb(209, 209, 209);
+}
