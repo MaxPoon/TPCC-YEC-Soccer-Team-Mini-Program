@@ -2,20 +2,20 @@
 
 ## How to Set Up Test Environment
 * Change the host url to `'http://localhost'` in `client/config.js`.
-* Install nodemon<br> 
+* Install nodemon
 ```
 npm install -g nodemon
-```<br>
-* Install server code dependencies<br>
+```
+* Install server code dependencies
 ```
 cd server
 npm install
 ```
-* Initialize the database (only do it when there's a change in database schema)<br>
+* Initialize the database (only do it when there's a change in database schema)
 ```
 node tools/initdb.js
 ```
-* Run the server program in test mode<br>
+* Run the server program in test mode
 ```
 npm run dev
 ```
