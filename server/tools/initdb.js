@@ -1,42 +1,44 @@
-/**
- * 腾讯云微信小程序解决方案
- * Demo 数据库初始化脚本
- * @author Jason
- */
-const fs = require('fs')
-const path = require('path')
-const { mysql: config } = require('../config')
+const fs = require('fs');
+const path = require('path');
+const { mysql: config } = require('../config');
 
-console.log('\n======================================')
-console.log('开始初始化数据库...')
+console.log('\n======================================');
+console.log('Started to initialize the database...');
 
-// 初始化 SQL 文件路径
-const INIT_DB_FILE = path.join(__dirname, './cAuth.sql')
+// Init the file paths
+const INIT_DB_FILE = path.join(__dirname, './cAuth.sql');
+const SQL_TABLE_FILES_DIR = path.join(__dirname, './sql_tables');
 
 const DB = require('knex')({
-    client: 'mysql',
-    connection: {
-        host: config.host,
-        port: config.port,
-        user: config.user,
-        password: config.pass,
-        database: config.db,
-        charset: config.char,
-        multipleStatements: true
-    }
-})
+  client: 'mysql',
+  connection: {
+    host: config.host,
+    port: config.port,
+    user: config.user,
+    password: config.pass,
+    database: config.db,
+    charset: config.char,
+    multipleStatements: true
+  }
+});
 
-console.log(`准备读取 SQL 文件：${INIT_DB_FILE}`)
+console.log(`Reading the file: ${INIT_DB_FILE}`);
 
-// 读取 .sql 文件内容
-const content = fs.readFileSync(INIT_DB_FILE, 'utf8')
+// Read the sql file
+var content = fs.readFileSync(INIT_DB_FILE, 'utf8');
 
-console.log('开始执行 SQL 文件...')
+console.log('Started to run the sql files.');
 
-// 执行 .sql 文件内容
+// Run the query in sql files
 DB.raw(content).then(res => {
-    console.log('数据库初始化成功！')
-    process.exit(0)
+  sqlTableFileNames = fs.readdirSync(SQL_TABLE_FILES_DIR);
+  sqlTableFileNames.forEach(async fileName => {
+    console.log(`Reading the table sql file: ${fileName}`);
+    content = fs.readFileSync(path.join(SQL_TABLE_FILES_DIR, fileName), 'utf8');
+    await DB.raw(content);
+  });
+  console.log('Successfully initialized the database!')
+  process.exit(0);
 }, err => {
-    throw new Error(err)
-})
+  throw new Error(err);
+});
