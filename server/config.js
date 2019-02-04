@@ -12,11 +12,11 @@ if (process.argv.includes("test"))
 
     // 是否使用腾讯云代理登录小程序
     useQcloudLogin: false,
-    qcloudAppId: '您的腾讯云 AppID',
-    qcloudSecretId: '您的腾讯云 SecretId',
-    qcloudSecretKey: '您的腾讯云 SecretKey',
+    qcloudAppId: '',
+    qcloudSecretId: '',
+    qcloudSecretKey: '',
     tunnelServerUrl: '',
-    tunnelSignatureKey: '27fb7d1c161b7ca52d73cce0f1d833f9f5b5ec89',
+    tunnelSignatureKey: '',
     serverHost: "localhost",
 
     /**
