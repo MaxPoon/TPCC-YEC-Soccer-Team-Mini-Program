@@ -2,6 +2,14 @@
 
 ## How to Set Up Test Environment
 * Change the host url to `'http://localhost'` in `client/config.js`.
+* Install Mysql 5.7. DO NOT install version 8.0 as we are using version 5.7 on production.
+For Macbook, you can use brew to install it and start running the database on local machine if you have already installed brew:
+```
+brew install mysql@5.7
+brew services start mysql@5.7
+```
+For PC, please follow the guideline to install Mysql 5.7: https://dev.mysql.com/doc/refman/5.7/en/windows-installation.html
+* When installing the database, set empty password for `root` user.
 * Install nodemon
 ```
 npm install -g nodemon
