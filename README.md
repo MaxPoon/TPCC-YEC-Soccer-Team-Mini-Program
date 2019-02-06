@@ -21,7 +21,7 @@ npm install
 ```
 * Initialize the database (only do it when there's a change in database schema)
 ```
-node tools/initdb.js
+node tools/initdb.js test
 ```
 * Run the server program in test mode
 ```
