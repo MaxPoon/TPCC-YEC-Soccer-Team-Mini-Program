@@ -10,6 +10,11 @@ brew services start mysql@5.7
 ```
 For PC, please follow the guideline to install Mysql 5.7: https://dev.mysql.com/doc/refman/5.7/en/windows-installation.html
 * When installing the database, set empty password for `root` user.
+* Log into mysql and create the cauth database (only do it at the first time):
+```
+mysql -u root
+CREATE DATABASE cauth;
+```
 * Install nodemon
 ```
 npm install -g nodemon
