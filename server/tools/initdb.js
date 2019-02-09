@@ -30,13 +30,13 @@ var content = fs.readFileSync(INIT_DB_FILE, 'utf8');
 console.log('Started to run the sql files.');
 
 // Run the query in sql files
-DB.raw(content).then(res => {
+DB.raw(content).then(async res => {
   sqlTableFileNames = fs.readdirSync(SQL_TABLE_FILES_DIR);
-  sqlTableFileNames.forEach(async fileName => {
+  for (var fileName of sqlTableFileNames) {
     console.log(`Reading the table sql file: ${fileName}`);
     content = fs.readFileSync(path.join(SQL_TABLE_FILES_DIR, fileName), 'utf8');
     await DB.raw(content);
-  });
+  }
   console.log('Successfully initialized the database!')
   process.exit(0);
 }, err => {
