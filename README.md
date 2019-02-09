@@ -2,6 +2,19 @@
 
 ## How to Set Up Test Environment
 * Change the host url to `'http://localhost'` in `client/config.js`.
+* Install Mysql 5.7. DO NOT install version 8.0 as we are using version 5.7 on production.
+For Macbook, you can use brew to install it and start running the database on local machine if you have already installed brew:
+```
+brew install mysql@5.7
+brew services start mysql@5.7
+```
+For PC, please follow the guideline to install Mysql 5.7: https://dev.mysql.com/doc/refman/5.7/en/windows-installation.html
+* When installing the database, set empty password for `root` user.
+* Log into mysql and create the cauth database (only do it at the first time):
+```
+mysql -u root
+CREATE DATABASE cauth;
+```
 * Install nodemon
 ```
 npm install -g nodemon
@@ -13,7 +26,7 @@ npm install
 ```
 * Initialize the database (only do it when there's a change in database schema)
 ```
-node tools/initdb.js
+node tools/initdb.js test
 ```
 * Run the server program in test mode
 ```
