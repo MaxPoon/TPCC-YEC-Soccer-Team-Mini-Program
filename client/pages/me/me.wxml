@@ -47,7 +47,7 @@
 
 
     <view>
-      <button type='{{saveBtnType}}' bindtap='infoSaveClick'>save</button>
+      <button disabled='{{btnDisable}}' bindtap='infoSaveClick'>save</button>
     </view>
   </view>
 

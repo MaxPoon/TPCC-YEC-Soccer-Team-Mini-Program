@@ -1,5 +1,7 @@
 // pages/me/me.js
+const qcloud = require('wafer2-client-sdk');
 const app = getApp();
+
 Page({
   data: {
     personal: {},
@@ -11,37 +13,48 @@ Page({
     phoneInputValue: null,
     email: null,
     emailInputValue: null,
-    saveBtnType: 'default'
+    btnDisable: true
   },
   onLoad: function () {
     this.setData({
-      personal: app.personal
+      personal: app.userInfo
     });
   },
 
   chineseNameInput: function (event) {
-    this.setData({
-      chineseNameInputValue: event.detail.value,
-      saveBtnType: 'primary'
-    });
+    if (event.detail.value.length > 0) {
+      this.btnDisable = false
+      this.setData({
+        chineseNameInputValue: event.detail.value,
+        btnDisable: false
+      });
+    }
   },
   englishNameInput: function (event) {
-    this.setData({
-      englishNameInputValue: event.detail.value,
-      saveBtnType: 'primary'
-    });
+    if (event.detail.value.length > 0) {
+      this.btnDisable = false
+      this.setData({
+        englishNameInputValue: event.detail.value,
+        btnDisable: false
+      });
+    }
   },
   phoneInput: function (event) {
-    this.setData({
-      phoneInputValue: event.detail.value,
-      saveBtnType: 'primary'
-    });
+    if (event.detail.value.length > 0) {
+      this.btnDisable = false
+      this.setData({
+        phoneInputValue: event.detail.value,
+        btnDisable: false
+      });
+    }
   },
   emailInput: function (event) {
-    this.setData({
-      emailInputValue: event.detail.value,
-      saveBtnType: 'primary'
-    });
+    if (event.detail.value.length > 0) {
+      this.btnDisable = false
+      this.setData({
+        emailInputValue: event.detail.value,
+      });
+    }
   },
 
   infoSaveClick: function (event) {
@@ -50,17 +63,18 @@ Page({
       englishName: this.data.englishNameInputValue,
       phone: this.data.phoneInputValue,
       email: this.data.emailInputValue,
-      saveBtnType: 'default'
+      btnDisable: true
     });
     //update the latest info into server
     qcloud.request({
-      url: config.service.userUrl + '?OpenID=' + that.userInfo.openId,
+      url: 'http://localhost:5757',//config.service.userUrl + '?OpenID=' + that.userInfo.openId,
       method: 'POST',
       data: {
-        OpenID: app.userInfo.openId
+        OpenID: this.personal.openId
       },
       success: function (res) {
         //able update userinfo into server
+        console.log('successed to update userinfo');
       },
       fail: function (err) {
         // fail
