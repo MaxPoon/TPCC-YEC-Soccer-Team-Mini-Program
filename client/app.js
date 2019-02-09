@@ -11,6 +11,32 @@ App({
     qcloud.login({
       success(res) {
         that.userInfo = res;
+        //console.log(that.userInfo);
+
+        qcloud.request({
+          url: config.service.userUrl + '?OpenID=' + that.userInfo.openId,
+          data: {
+            OpenID: that.userInfo.openId
+          },
+          method: 'GET', // OPTIONS, GET, HEAD, POST, PUT, DELETE, TRACE, CONNECT
+
+          success: function (res) {
+            console.log(res);
+          },
+          fail: function (err) {
+            // fail
+            console.log('failed to get userinfo; err:');
+            console.log(err)
+          },
+          complete: function () {
+            // complete
+            console.log('complete qcloud.request for userinfo')
+          }
+        });
+      },
+      fail(err) {
+        console.log('fail to login; err:');
+        console.log(err)
       }
     });
   }

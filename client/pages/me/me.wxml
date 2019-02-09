@@ -1,2 +1,62 @@
 <!--pages/me/me.wxml-->
-<text>pages/me/me.wxml</text>
+<view class="container">
+
+
+  <view class="userinfo">   <!-- avatar and username -->
+    <image  class="userinfo-avatar" src="{{userInfo.avatarUrl}}" mode="cover"></image>
+    <text class="userinfo-nickname">{{userInfo.nickName}}</text>
+  </view>
+
+
+  <view class="body">   <!-- info -->
+    <view class="info">   <!-- Chinese name -->
+      <text>Chinese name</text>
+      <view class="infoInput">
+        <view wx:if="{{!chName}}" >
+          <input placeholder='Tap here to enter' bindinput='chNameInput'/>
+        </view>
+        <!-- waiting for server link -->
+        <view wx:else><input placeholder-class='phText' placeholder='{{chName}}' bindinput='chNameInput'/></view>
+      </view>
+    </view>
+
+    <view class="info">   <!-- English name -->
+      <text>English name</text>
+      <view class="infoInput">
+        <view wx:if="{{!egName}}" >
+          <input placeholder='Tap here to enter' bindinput='egNameInput' />
+        </view>
+        <!-- waiting for server link -->
+        <view wx:else><input placeholder-class='phText' placeholder='{{egName}}' bindinput='egNameInput'/></view>
+      </view>
+    </view>
+
+    <view class="info">   <!-- phone -->
+      <text>Mobile number</text>
+      <view class="infoInput">
+        <view wx:if="{{!phone}}" >
+          <input placeholder='Tap here to enter' bindinput='phoneInput' type='number'/>
+        </view>
+        <!-- waiting for server link -->
+        <view wx:else><input placeholder-class='phText' placeholder='{{phone}}' bindinput='phoneInput'/></view>
+      </view>
+    </view>
+
+    <view class="info">   <!-- email -->
+      <text>E-mail</text>
+      <view class="infoInput">
+        <view wx:if="{{!email}}" >
+          <input placeholder='Tap here to enter' bindinput='emailInput' />
+        </view>
+        <!-- waiting for server link -->
+        <view wx:else><input placeholder-class='phText' placeholder='{{email}}' bindinput='emailInput'/></view>
+      </view>
+    </view>
+
+
+    <view>
+      <button type='{{saveBtnType}}' bindtap='infoSaveClick'>save</button>
+    </view>
+  </view>
+
+</view> 

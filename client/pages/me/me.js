@@ -1,66 +1,69 @@
 // pages/me/me.js
+const app = getApp();
 Page({
-
-  /**
-   * 页面的初始数据
-   */
   data: {
+    userInfo: {},
+    chName: null,
+    chNameTemp: null,
+    egName: null,
+    egNameTemp: null,
+    phone: null,
+    phoneTemp: null,
+    email: null,
+    emailTemp: null,
 
+    saveBtnType: 'default'
   },
 
-  /**
-   * 生命周期函数--监听页面加载
-   */
-  onLoad: function (options) {
+  onLoad: function () {
+    console.log(app.userInfo)
+    this.setData({
+      userInfo: app.userInfo
+    })
 
+    if (this.data.userInfo == null) {
+      // if there is no userinfo yet
+      setTimeout(function () {}, 100)
+    } 
   },
 
-  /**
-   * 生命周期函数--监听页面初次渲染完成
-   */
-  onReady: function () {
-
+  chNameInput: function (event) {
+    this.setData({
+      chNameTemp: event.detail.value,
+      saveBtnType: 'primary'
+    })
   },
 
-  /**
-   * 生命周期函数--监听页面显示
-   */
-  onShow: function () {
-
+  egNameInput: function (event) {
+    this.setData({
+      egNameTemp: event.detail.value,
+      saveBtnType: 'primary'
+    })
   },
 
-  /**
-   * 生命周期函数--监听页面隐藏
-   */
-  onHide: function () {
-
+  phoneInput: function (event) {
+    this.setData({
+      phoneTemp: event.detail.value,
+      saveBtnType: 'primary'
+    })
   },
 
-  /**
-   * 生命周期函数--监听页面卸载
-   */
-  onUnload: function () {
-
+  emailInput: function (event) {
+    this.setData({
+      emailTemp: event.detail.value,
+      saveBtnType: 'primary'
+    })
   },
 
-  /**
-   * 页面相关事件处理函数--监听用户下拉动作
-   */
-  onPullDownRefresh: function () {
+  infoSaveClick: function (event) {
+    this.setData({
+      chName: this.data.chNameTemp,
+      egName: this.data.egNameTemp,
+      phone: this.data.phoneTemp,
+      email: this.data.emailTemp,
+      saveBtnType: 'default'
+    })
 
-  },
-
-  /**
-   * 页面上拉触底事件的处理函数
-   */
-  onReachBottom: function () {
-
-  },
-
-  /**
-   * 用户点击右上角分享
-   */
-  onShareAppMessage: function () {
-
+    //update the latest info into server
   }
 })
