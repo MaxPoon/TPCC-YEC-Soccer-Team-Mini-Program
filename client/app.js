@@ -12,7 +12,7 @@ App({
       success(res) {
         that.userInfo = res;
         qcloud.request({
-          url: config.service.userUrl + '?OpenID=' + that.userInfo.openId,
+          url: config.service.userUrl + '?OpenId=' + that.userInfo.openId,
           method: 'GET', 
           success: function (res) {
             //able to get user's personal information from server
