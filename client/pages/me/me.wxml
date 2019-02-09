@@ -12,44 +12,36 @@
     <view class="info">   <!-- Chinese name -->
       <text>Chinese name</text>
       <view class="infoInput">
-        <view wx:if="{{!chName}}" >
-          <input placeholder='Tap here to enter' bindinput='chNameInput'/>
-        </view>
+          <input wx:if="{{!personal.data.ChineseName}}" placeholder='Tap here to enter' bindinput='chineseNameInput'/>
         <!-- waiting for server link -->
-        <view wx:else><input placeholder-class='phText' placeholder='{{chName}}' bindinput='chNameInput'/></view>
+        <input wx:else placeholder-class='phText' placeholder='{{chineseName}}' bindinput='chineseNameInput'/>
       </view>
     </view>
 
     <view class="info">   <!-- English name -->
       <text>English name</text>
       <view class="infoInput">
-        <view wx:if="{{!egName}}" >
-          <input placeholder='Tap here to enter' bindinput='egNameInput' />
-        </view>
+          <input wx:if="{{!personal.data.EnglishName}}" placeholder='Tap here to enter' bindinput='englishNameInput' />
         <!-- waiting for server link -->
-        <view wx:else><input placeholder-class='phText' placeholder='{{egName}}' bindinput='egNameInput'/></view>
+        <input wx:else placeholder-class='phText' placeholder='{{englishName}}' bindinput='englishNameInput'/>
       </view>
     </view>
 
     <view class="info">   <!-- phone -->
       <text>Mobile number</text>
       <view class="infoInput">
-        <view wx:if="{{!phone}}" >
-          <input placeholder='Tap here to enter' bindinput='phoneInput' type='number'/>
-        </view>
+          <input wx:if="{{!personal.data.MobileNumber}}" placeholder='Tap here to enter' bindinput='phoneInput' type='number'/>
         <!-- waiting for server link -->
-        <view wx:else><input placeholder-class='phText' placeholder='{{phone}}' bindinput='phoneInput'/></view>
+        <input wx:else placeholder-class='phText' placeholder='{{phone}}' bindinput='phoneInput'/>
       </view>
     </view>
 
     <view class="info">   <!-- email -->
       <text>E-mail</text>
       <view class="infoInput">
-        <view wx:if="{{!email}}" >
-          <input placeholder='Tap here to enter' bindinput='emailInput' />
-        </view>
+          <input wx:if="{{!personal.data.EmailAddress}}" placeholder='Tap here to enter' bindinput='emailInput' />
         <!-- waiting for server link -->
-        <view wx:else><input placeholder-class='phText' placeholder='{{email}}' bindinput='emailInput'/></view>
+        <input wx:else placeholder-class='phText' placeholder='{{email}}' bindinput='emailInput'/>
       </view>
     </view>
 

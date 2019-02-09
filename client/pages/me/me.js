@@ -2,68 +2,75 @@
 const app = getApp();
 Page({
   data: {
-    userInfo: {},
-    chName: null,
-    chNameTemp: null,
-    egName: null,
-    egNameTemp: null,
+    personal: {},
+    chineseName: null,
+    chineseNameInputValue: null,
+    englishName: null,
+    englishNameInputValue: null,
     phone: null,
-    phoneTemp: null,
+    phoneInputValue: null,
     email: null,
-    emailTemp: null,
-
+    emailInputValue: null,
     saveBtnType: 'default'
   },
-
   onLoad: function () {
-    console.log(app.userInfo)
     this.setData({
-      userInfo: app.userInfo
-    })
-
-    if (this.data.userInfo == null) {
-      // if there is no userinfo yet
-      setTimeout(function () {}, 100)
-    } 
+      personal: app.personal
+    });
   },
 
-  chNameInput: function (event) {
+  chineseNameInput: function (event) {
     this.setData({
-      chNameTemp: event.detail.value,
+      chineseNameInputValue: event.detail.value,
       saveBtnType: 'primary'
-    })
+    });
   },
-
-  egNameInput: function (event) {
+  englishNameInput: function (event) {
     this.setData({
-      egNameTemp: event.detail.value,
+      englishNameInputValue: event.detail.value,
       saveBtnType: 'primary'
-    })
+    });
   },
-
   phoneInput: function (event) {
     this.setData({
-      phoneTemp: event.detail.value,
+      phoneInputValue: event.detail.value,
       saveBtnType: 'primary'
-    })
+    });
   },
-
   emailInput: function (event) {
     this.setData({
-      emailTemp: event.detail.value,
+      emailInputValue: event.detail.value,
       saveBtnType: 'primary'
-    })
+    });
   },
 
   infoSaveClick: function (event) {
     this.setData({
-      chName: this.data.chNameTemp,
-      egName: this.data.egNameTemp,
-      phone: this.data.phoneTemp,
-      email: this.data.emailTemp,
+      chineseName: this.data.chineseNameInputValue,
+      englishName: this.data.englishNameInputValue,
+      phone: this.data.phoneInputValue,
+      email: this.data.emailInputValue,
       saveBtnType: 'default'
-    })
-
+    });
     //update the latest info into server
+    qcloud.request({
+      url: config.service.userUrl + '?OpenID=' + that.userInfo.openId,
+      method: 'POST',
+      data: {
+        OpenID: app.userInfo.openId
+      },
+      success: function (res) {
+        //able update userinfo into server
+      },
+      fail: function (err) {
+        // fail
+        console.log('failed to update userinfo; err:');
+        console.log(err);
+      },
+      complete: function () {
+        // complete
+        console.log('complete qcloud.request for updating userinfo');
+      }
+    });
   }
-})
+});
