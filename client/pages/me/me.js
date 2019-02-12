@@ -53,6 +53,7 @@ Page({
       this.btnDisable = false
       this.setData({
         emailInputValue: event.detail.value,
+        btnDisable: false
       });
     }
   },
@@ -69,8 +70,15 @@ Page({
     qcloud.request({
       url: 'http://localhost:5757',//config.service.userUrl + '?OpenID=' + that.userInfo.openId,
       method: 'POST',
+      header: {
+        'content-type':'application/x-www-form-urlencoded'
+      },
       data: {
-        OpenID: this.personal.openId
+        //OpenID: this.personal.openId (using annotation to avoid error of undefined openID)
+        ChineseName: this.data.chineseName,
+        EnglishName: this.data.englishName,
+        MobileNumber: this.data.phone,
+        EmailAddress: this.data.email
       },
       success: function (res) {
         //able update userinfo into server
