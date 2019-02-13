@@ -23,7 +23,6 @@ Page({
 
   chineseNameInput: function (event) {
     if (event.detail.value.length > 0) {
-      this.btnDisable = false
       this.setData({
         chineseNameInputValue: event.detail.value,
         btnDisable: false
@@ -32,7 +31,6 @@ Page({
   },
   englishNameInput: function (event) {
     if (event.detail.value.length > 0) {
-      this.btnDisable = false
       this.setData({
         englishNameInputValue: event.detail.value,
         btnDisable: false
@@ -41,7 +39,6 @@ Page({
   },
   phoneInput: function (event) {
     if (event.detail.value.length > 0) {
-      this.btnDisable = false
       this.setData({
         phoneInputValue: event.detail.value,
         btnDisable: false
@@ -50,7 +47,6 @@ Page({
   },
   emailInput: function (event) {
     if (event.detail.value.length > 0) {
-      this.btnDisable = false
       this.setData({
         emailInputValue: event.detail.value,
         btnDisable: false
@@ -68,13 +64,14 @@ Page({
     });
     //update the latest info into server
     qcloud.request({
-      url: 'http://localhost:5757',//config.service.userUrl + '?OpenID=' + that.userInfo.openId,
-      method: 'POST',
-      header: {
-        'content-type':'application/x-www-form-urlencoded'
-      },
+      url: 'http://localhost:5757',
+      //url: config.service.userUrl,
+      method: 'PUT',
+      // header: {
+      //   'content-type':'application/x-www-form-urlencoded'
+      // },
       data: {
-        //OpenID: this.personal.openId (using annotation to avoid error of undefined openID)
+        OpenID: this.data.personal.openId,
         ChineseName: this.data.chineseName,
         EnglishName: this.data.englishName,
         MobileNumber: this.data.phone,
@@ -82,7 +79,6 @@ Page({
       },
       success: function (res) {
         //able update userinfo into server
-        console.log('successed to update userinfo');
       },
       fail: function (err) {
         // fail
@@ -91,7 +87,6 @@ Page({
       },
       complete: function () {
         // complete
-        console.log('complete qcloud.request for updating userinfo');
       }
     });
   }

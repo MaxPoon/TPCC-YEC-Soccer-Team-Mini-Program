@@ -16,7 +16,7 @@ App({
           method: 'GET', 
           success: function (res) {
             //able to get user's personal information from server
-            that.userInfo = res.body;
+            that.userInfo = Object.assign(that.userInfo, res.body);
           },
           fail: function (err) {
             // fail

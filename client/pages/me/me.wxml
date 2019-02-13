@@ -3,8 +3,8 @@
 
 
   <view class="userinfo">   <!-- avatar and username -->
-    <image  class="userinfo-avatar" src="{{userInfo.avatarUrl}}" mode="cover"></image>
-    <text class="userinfo-nickname">{{userInfo.nickName}}</text>
+    <image  class="userinfo-avatar" src="{{personal.avatarUrl}}" mode="cover"></image>
+    <text class="userinfo-nickname">{{personal.nickName}}</text>
   </view>
 
 
@@ -12,8 +12,7 @@
     <view class="info">   <!-- Chinese name -->
       <text>Chinese name</text>
       <view class="infoInput">
-          <input wx:if="{{!personal.data.ChineseName}}" placeholder='Tap here to enter' bindinput='chineseNameInput'/>
-        <!-- waiting for server link -->
+        <input wx:if="{{!personal.data.ChineseName}}" placeholder='Tap here to enter' bindinput='chineseNameInput'/>
         <input wx:else placeholder-class='phText' placeholder='{{chineseName}}' bindinput='chineseNameInput'/>
       </view>
     </view>
@@ -21,8 +20,7 @@
     <view class="info">   <!-- English name -->
       <text>English name</text>
       <view class="infoInput">
-          <input wx:if="{{!personal.data.EnglishName}}" placeholder='Tap here to enter' bindinput='englishNameInput' />
-        <!-- waiting for server link -->
+        <input wx:if="{{!personal.data.EnglishName}}" placeholder='Tap here to enter' bindinput='englishNameInput' />
         <input wx:else placeholder-class='phText' placeholder='{{englishName}}' bindinput='englishNameInput'/>
       </view>
     </view>
@@ -30,8 +28,7 @@
     <view class="info">   <!-- phone -->
       <text>Mobile number</text>
       <view class="infoInput">
-          <input wx:if="{{!personal.data.MobileNumber}}" placeholder='Tap here to enter' bindinput='phoneInput' type='number'/>
-        <!-- waiting for server link -->
+         <input wx:if="{{!personal.data.MobileNumber}}" placeholder='Tap here to enter' bindinput='phoneInput' type='number'/>
         <input wx:else placeholder-class='phText' placeholder='{{phone}}' bindinput='phoneInput'/>
       </view>
     </view>
@@ -39,8 +36,7 @@
     <view class="info">   <!-- email -->
       <text>E-mail</text>
       <view class="infoInput">
-          <input wx:if="{{!personal.data.EmailAddress}}" placeholder='Tap here to enter' bindinput='emailInput' />
-        <!-- waiting for server link -->
+        <input wx:if="{{!personal.data.EmailAddress}}" placeholder='Tap here to enter' bindinput='emailInput' />
         <input wx:else placeholder-class='phText' placeholder='{{email}}' bindinput='emailInput'/>
       </view>
     </view>
