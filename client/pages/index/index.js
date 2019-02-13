@@ -18,6 +18,14 @@ Page({
       url: '../editntc/editntc'
     })
   },
+  ShowSuccessMsg: function(){
+    wx.showToast({
+      title: 'Success',
+      icon: 'succes',
+      duration: 1000,
+      mask: true
+    })
+  },
   /**
    * 生命周期函数--监听页面加载
    */

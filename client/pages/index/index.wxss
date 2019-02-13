@@ -27,12 +27,10 @@
   padding-right: 10px;
   font-size: 25px;
 } 
-.edit-notice::after {
+.edit-notice::after, .new-notice::after,  formSubmit__button::after{
   border: 0;
 }
-.new-notice::after {
-  border: 0;
-}
+
 .weather {
   display:block;
   color: #FFF;
@@ -58,4 +56,7 @@
   text-align: center;
   margin-top: 20px;
   margin-bottom: 30px;
+}
+.formSubmit__button{
+  width:85%;
 }

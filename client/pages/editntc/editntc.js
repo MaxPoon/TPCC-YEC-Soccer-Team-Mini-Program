@@ -83,5 +83,11 @@ Page({
     wx:wx.navigateBack({
       delta: 1,
     })
+    wx.showToast({
+      title: 'Success',
+      icon: 'succes',
+      duration: 1000,
+      mask: true
+    })
   },
 })

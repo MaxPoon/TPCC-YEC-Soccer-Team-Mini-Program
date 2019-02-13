@@ -19,4 +19,9 @@
   <view class='time'>
     <text>Training starts at {{ time }}</text>
   </view>
+  <view class='formContainer'>
+    <form bindsubmit="formSubmit" report-submit>
+    <button class='formSubmit__button' formType="submit" bindtap='ShowSuccessMsg'>Click to get next week's notifiction</button>
+    </form>
+  </view>
 </view>
