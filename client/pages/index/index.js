@@ -1,4 +1,5 @@
 //index.js
+const app = getApp();
 Page({
 
   /**
@@ -30,7 +31,16 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-
+    var that = this;
+    wx.request({
+      url: 'http://api.openweathermap.org/data/2.5/weather?q=Singapore,my&APPID=eeec1ae3008acaff7f53e89c77054165',
+      data: {},
+      method: 'GET',
+      success(res) {
+        console.log(res.data.weather[0]);
+        that.setData({ weather: res.data.weather[0].main});
+      }
+    })
   },
 
   /**
