@@ -21,6 +21,7 @@
   </view>
   <view class='formContainer'>
     <form bindsubmit="formSubmit" report-submit>
+    <!--used to collect formld, formsubmit not defined yet-->
     <button class='formSubmit__button' formType="submit" bindtap='ShowSuccessMsg'>Click to get next week's notifiction</button>
     </form>
   </view>

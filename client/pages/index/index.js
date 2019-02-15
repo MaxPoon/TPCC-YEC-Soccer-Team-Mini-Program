@@ -33,12 +33,10 @@ Page({
   onLoad: function (options) {
     var that = this;
     wx.request({
-      url: 'http://api.openweathermap.org/data/2.5/weather?q=Singapore,my&APPID=eeec1ae3008acaff7f53e89c77054165',
-      data: {},
-      method: 'GET',
+      url: 'http://api.openweathermap.org/data/2.5/weather?lat=1.29877&lon=103.77821&APPID=eeec1ae3008acaff7f53e89c77054165', //current weather in NUS information
       success(res) {
         console.log(res.data.weather[0]);
-        that.setData({ weather: res.data.weather[0].main});
+        that.setData({ weather: res.data.weather[0].description}); 
       }
     })
   },

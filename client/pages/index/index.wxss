@@ -38,6 +38,9 @@
   text-align: center;
   font-size: 40px;
 }
+.weather-text{
+  text-transform: capitalize;
+}
 .location {
   color: #FFF;
   font-size: 60px;
