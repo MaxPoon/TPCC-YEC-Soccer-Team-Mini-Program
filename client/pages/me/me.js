@@ -5,13 +5,9 @@ const app = getApp();
 Page({
   data: {
     personal: {},
-    chineseName: null,
     chineseNameInputValue: null,
-    englishName: null,
     englishNameInputValue: null,
-    phone: null,
     phoneInputValue: null,
-    email: null,
     emailInputValue: null,
     btnDisable: true
   },
@@ -55,27 +51,20 @@ Page({
   },
 
   infoSaveClick: function (event) {
-    this.setData({
-      chineseName: this.data.chineseNameInputValue,
-      englishName: this.data.englishNameInputValue,
-      phone: this.data.phoneInputValue,
-      email: this.data.emailInputValue,
-      btnDisable: true
-    });
     //update the latest info into server
     qcloud.request({
-      url: 'http://localhost:5757',
-      //url: config.service.userUrl,
+      //url: 'http://localhost:5757',
+      url: config.service.userUrl,
       method: 'PUT',
-      // header: {
-      //   'content-type':'application/x-www-form-urlencoded'
-      // },
+      header: {
+        'content-type':'application/x-www-form-urlencoded'
+      },
       data: {
-        OpenID: this.data.personal.openId,
-        ChineseName: this.data.chineseName,
-        EnglishName: this.data.englishName,
-        MobileNumber: this.data.phone,
-        EmailAddress: this.data.email
+        OpenId: this.data.personal.openId,
+        ChineseName: this.data.chineseNameInputValue,
+        EnglishName: this.data.englishNameInputValue,
+        MobileNumber: this.data.phoneInputValue,
+        EmailAddress: this.data.emailInputValue
       },
       success: function (res) {
         //able update userinfo into server
@@ -88,6 +77,9 @@ Page({
       complete: function () {
         // complete
       }
+    });
+    this.setData({
+      btnDisable: true
     });
   }
 });

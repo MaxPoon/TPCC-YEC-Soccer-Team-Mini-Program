@@ -13,7 +13,7 @@
       <text>Chinese name</text>
       <view class="infoInput">
         <input wx:if="{{!personal.data.ChineseName}}" placeholder='Tap here to enter' bindinput='chineseNameInput'/>
-        <input wx:else placeholder-class='phText' placeholder='{{chineseName}}' bindinput='chineseNameInput'/>
+        <input wx:else placeholder-class='phText' value='{{personal.data.ChineseName}}' bindinput='chineseNameInput'/>
       </view>
     </view>
 
@@ -21,7 +21,7 @@
       <text>English name</text>
       <view class="infoInput">
         <input wx:if="{{!personal.data.EnglishName}}" placeholder='Tap here to enter' bindinput='englishNameInput' />
-        <input wx:else placeholder-class='phText' placeholder='{{englishName}}' bindinput='englishNameInput'/>
+        <input wx:else placeholder-class='phText' value='{{personal.data.EnglishName}}' bindinput='englishNameInput'/>
       </view>
     </view>
 
@@ -29,7 +29,7 @@
       <text>Mobile number</text>
       <view class="infoInput">
          <input wx:if="{{!personal.data.MobileNumber}}" placeholder='Tap here to enter' bindinput='phoneInput' type='number'/>
-        <input wx:else placeholder-class='phText' placeholder='{{phone}}' bindinput='phoneInput'/>
+        <input wx:else placeholder-class='phText' value='{{personal.data.MobileNumber}}' bindinput='phoneInput'/>
       </view>
     </view>
 
@@ -37,7 +37,7 @@
       <text>E-mail</text>
       <view class="infoInput">
         <input wx:if="{{!personal.data.EmailAddress}}" placeholder='Tap here to enter' bindinput='emailInput' />
-        <input wx:else placeholder-class='phText' placeholder='{{email}}' bindinput='emailInput'/>
+        <input wx:else placeholder-class='phText' value='{{personal.data.EmailAddress}}' bindinput='emailInput'/>
       </view>
     </view>
 
