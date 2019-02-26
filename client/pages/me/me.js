@@ -1,6 +1,7 @@
 // pages/me/me.js
 const qcloud = require('wafer2-client-sdk');
 const app = getApp();
+//const config = request('../../congig');
 
 Page({
   data: {
@@ -15,56 +16,52 @@ Page({
     this.setData({
       personal: app.userInfo
     });
+    console.log(app.userInfo);
   },
 
   chineseNameInput: function (event) {
-    if (event.detail.value.length > 0) {
-      this.setData({
-        chineseNameInputValue: event.detail.value,
-        btnDisable: false
-      });
-    }
+    this.setData({
+      chineseNameInputValue: event.detail.value,
+      btnDisable: event.detail.value.length === 0
+    });
   },
   englishNameInput: function (event) {
-    if (event.detail.value.length > 0) {
-      this.setData({
-        englishNameInputValue: event.detail.value,
-        btnDisable: false
-      });
-    }
+    this.setData({
+      englishNameInputValue: event.detail.value,
+      btnDisable: event.detail.value.length === 0
+    });
   },
   phoneInput: function (event) {
-    if (event.detail.value.length > 0) {
-      this.setData({
-        phoneInputValue: event.detail.value,
-        btnDisable: false
-      });
-    }
+    this.setData({
+      phoneInputValue: event.detail.value,
+      btnDisable: event.detail.value.length === 0
+    });
   },
   emailInput: function (event) {
-    if (event.detail.value.length > 0) {
-      this.setData({
-        emailInputValue: event.detail.value,
-        btnDisable: false
-      });
-    }
+    this.setData({
+      emailInputValue: event.detail.value,
+      btnDisable: event.detail.value.length === 0
+    });
   },
+
 
   infoSaveClick: function (event) {
     //update the latest info into server
     qcloud.request({
-      //url: 'http://localhost:5757',
-      url: config.service.userUrl,
+      url: 'http://localhost:5757',
+      //url: config.service.userUrl,
       method: 'PUT',
-      header: {
-        'content-type':'application/x-www-form-urlencoded'
-      },
+      // header: {
+      //   'content-type':'application/x-www-form-urlencoded'
+      // },
       data: {
         OpenId: this.data.personal.openId,
+        WechatName: this.data.personal.nickName,
         ChineseName: this.data.chineseNameInputValue,
         EnglishName: this.data.englishNameInputValue,
         MobileNumber: this.data.phoneInputValue,
-        EmailAddress: this.data.emailInputValue
+        EmailAddress: this.data.emailInputValue,
+        Birthday: '1999-09-19'
       },
       success: function (res) {
         //able update userinfo into server
