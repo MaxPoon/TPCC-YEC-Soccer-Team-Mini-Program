@@ -1,4 +1,5 @@
 //index.js
+const qcloud = require('wafer2-client-sdk');
 const app = getApp();
 Page({
 
@@ -9,7 +10,8 @@ Page({
     location: "NUS",
     weather: "Mostly Cloudy",
     detailed: "Lower Field",
-    time: "Sunday 14:00"
+    time: "Sunday 14:00",
+    hid: true,
   },
   /**
    * 跳转到编辑页面
@@ -38,7 +40,26 @@ Page({
         console.log(res.data.weather[0]);
         that.setData({ weather: res.data.weather[0].description}); 
       }
-    })
+    });
+    qcloud.request({
+      url:'http://localhost:5757/weapp/user',
+      method:'GET',
+      header: {
+        'content-type': 'application/x-www-form-urlencoded'
+      },
+      data:{
+        OpenId:1234, 
+        //'1234'should be the user's openid, here is just an demo. One admin with OpenId =1234 was written into local DB for test purpose.
+      },
+      success: function(res){
+        console.log(res);
+        if(res.data.IsAdmin==1){
+          that.setData({
+            hid:false
+          })
+        }
+      }}
+    )
   },
 
   /**
