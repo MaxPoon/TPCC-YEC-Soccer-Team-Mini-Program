@@ -18,7 +18,12 @@ Page({
    */
   JumpToEdit: function () {
     wx.navigateTo({
-      url: '../editntc/editntc'
+      url: '../editntc/editntc?isAdd=0'
+    })
+  },
+  JumpToAdd: function () {
+    wx.navigateTo({
+      url: '../editntc/editntc?isAdd=1'
     })
   },
   ShowSuccessMsg: function(){
@@ -58,8 +63,18 @@ Page({
             hid:false
           })
         }
-      }}
-    )
+      }
+      });
+      qcloud.request({
+        url:'http://localhost:5757/weapp/training',
+        method:'GET',
+        header: {
+          'content-type': 'application/x-www-form-urlencoded'
+        },
+        success: function(res){
+          console.log(res);
+        }
+      })
   },
 
   /**

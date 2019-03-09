@@ -1,4 +1,7 @@
 // pages/userinfo/userinfo.js
+const qcloud = require('wafer2-client-sdk');
+const app = getApp();
+var util = require('../../utils/util.js');
 Page({
   data: {
     multiArray: [['Saturday', 'Sunday'], [10, 11, 12, 13, 14, 15, 16], ['00', 10, 20, 30, 40, 50]], // 0 was changed to "00"
@@ -88,6 +91,33 @@ Page({
       icon: 'succes',
       duration: 1000,
       mask: true
+    })
+    var Day;
+    if(e.detail.value.time[0]==0){
+      Day='Saturday';
+    }else{
+      Day='Sunday';
+    }
+    var trainingTime = [e.detail.value.time[1]+10, e.detail.value.time[2]*10].join(':');
+    var sendTime = util.formatTime(new Date());
+    qcloud.request({
+      url:'http://localhost:5757/weapp/training',
+      method:'PUT',
+      header: {
+        'content-type': 'application/x-www-form-urlencoded'
+      },
+      data: {
+        Location: e.detail.value.Location,
+        LocationDetail: e.detail.value.detailed,
+        Day:Day,
+        Time: trainingTime,
+        UpdatedTime: sendTime,
+        IsAdd: this.options.isAdd,
+      },
+      success:function(res){
+        console.log(res);
+      }
+
     })
   },
 })
