@@ -73,6 +73,15 @@ Page({
         },
         success: function(res){
           console.log(res);
+          var data = res.data[0];
+          var rowTime=data.Time;
+          var newTime = rowTime.slice(0,5);
+          var dataAndTime =[data.Day,newTime].join(' ');
+          that.setData({
+            location:data.Location,
+            detailed:data.LocationDetail,
+            time: dataAndTime
+          })
         }
       })
   },

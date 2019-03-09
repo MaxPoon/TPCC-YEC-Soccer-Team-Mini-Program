@@ -107,12 +107,11 @@ Page({
         'content-type': 'application/x-www-form-urlencoded'
       },
       data: {
-        Location: e.detail.value.Location,
+        Location: e.detail.value.location,
         LocationDetail: e.detail.value.detailed,
         Day:Day,
         Time: trainingTime,
         UpdatedTime: sendTime,
-        IsAdd: this.options.isAdd,
       },
       success:function(res){
         console.log(res);

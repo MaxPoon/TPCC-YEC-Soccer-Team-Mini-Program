@@ -11,7 +11,7 @@
       </view>
       <view class="form-element">
         <view class="section-title">Detailed location</view>
-        <input name="detaild" placeholder="Lower Field" />
+        <input name="detailed" placeholder="Lower Field" />
       </view>
       <view class="form-element">
         <view class="section-title">Start time</view>
