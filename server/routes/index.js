@@ -18,6 +18,10 @@ router.get('/login', authorizationMiddleware, controllers.login)
 router.get('/user', validationMiddleware, controllers.user.get)
 router.put('/user', validationMiddleware, controllers.user.put)
 
+// Training API endpoints
+router.get('/training', controllers.training.get)
+router.put('/training', controllers.training.put)
+
 // --- 图片上传 Demo --- //
 // 图片上传接口，小程序端可以直接将 url 填入 wx.uploadFile 中
 router.post('/upload', controllers.upload)
