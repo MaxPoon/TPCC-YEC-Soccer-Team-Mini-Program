@@ -1,7 +1,7 @@
 # Development Documentation
 
 ## How to Set Up Test Environment
-* Change the host url to `'http://localhost'` in `client/config.js`.
+* Change the host url to `'http://localhost:5757'` in `client/config.js`.
 * Install Mysql 5.7. DO NOT install version 8.0 as we are using version 5.7 on production.
 For Macbook, you can use brew to install it and start running the database on local machine if you have already installed brew:
 ```
