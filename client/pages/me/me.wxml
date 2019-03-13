@@ -10,9 +10,9 @@
 
   <view class="body">   <!-- info -->
     <view class="info">   <!-- Chinese name -->
-      <text>Chinese name</text>
+      <text>Chinese name: </text>
       <view class="infoInput">
-        <input placeholder='Tap here to enter' value='{{personal.data.ChineseName}}' bindinput='chineseNameInput'/>
+        {{  }}
       </view>
     </view>
 

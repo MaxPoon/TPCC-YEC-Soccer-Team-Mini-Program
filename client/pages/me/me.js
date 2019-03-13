@@ -12,6 +12,14 @@ Page({
     emailInputValue: null,
     btnDisable: true
   },
+  
+  //jump to editme page
+  JumpToEdit: function () {
+    wx.navigateTo({
+      url: '../editme/editme'
+    })
+  },
+
   onLoad: function () {
     this.setData({
       personal: app.userInfo
