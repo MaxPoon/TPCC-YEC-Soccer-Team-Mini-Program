@@ -1,46 +1,52 @@
 <!--pages/me/me.wxml-->
 <view class="container">
 
-
-  <view class="userinfo">   <!-- avatar and username -->
+  <view class="info-head">   <!-- avatar and username -->
     <image  class="userinfo-avatar" src="{{personal.avatarUrl}}" mode="cover"></image>
     <text class="userinfo-nickname">{{personal.nickName}}</text>
   </view>
 
+  <view class='info-body'>
+    
 
-  <view class="body">   <!-- info -->
-    <view class="info">   <!-- Chinese name -->
-      <text>Chinese name: </text>
-      <view class="infoInput">
-        {{  }}
+    <view class='info-items'>
+      <view class='info-display'>
+        <text class='info-key'>Chinese name: </text>
+        <text wx:if="{{!personal.data.ChineseName}}" class='info-value'>{{ chineseName }}</text>
+        <text wx:else class='info-value'>{{ personal.data.hineseName }}</text>
+      </view>
+    </view>
+    <view class='info-items'>
+      <view class='info-display'>
+        <text class='info-key'>English name: </text>
+        <text wx:if="{{!personal.data.EnglishName}}" class='info-value'>{{ englishName }}</text>
+        <text wx:else class='info-value'>{{ personal.data.hineseName }}</text>
+      </view>
+    </view>
+    <view class='info-items'>
+      <view class='info-display'>
+        <text class='info-key'>Mobile number: </text>
+        <text wx:if="{{!personal.data.MobileNumber}}" class='info-value'>{{ phoneNumber }}</text>
+        <text wx:else class='info-value'>{{ personal.data.MobileNumber }}</text>
+      </view>
+    </view>
+    <view class='info-items'>
+      <view class='info-display'>
+        <text class='info-key'>Email address: </text>
+        <text wx:if="{{!personal.data.EmailAddress}}" class='info-value'>{{ email }}</text>
+        <text wx:else class='info-value'>{{ personal.data.EmailAddress }}</text>
+      </view>
+    </view>
+    <view class='info-items'>
+      <view class='info-display'>
+        <text class='info-key'>Birthday: </text>
+        <text wx:if="{{!personal.data.Birthday}}" class='info-value'>{{ birthday }}</text>
+        <text wx:else class='info-value'>{{ personal.data.Birthday }}</text>
       </view>
     </view>
 
-    <view class="info">   <!-- English name -->
-      <text>English name</text>
-      <view class="infoInput">
-        <input placeholder='Tap here to enter' value='{{personal.data.EnglishName}}' bindinput='englishNameInput' />
-      </view>
-    </view>
-
-    <view class="info">   <!-- phone -->
-      <text>Mobile number</text>
-      <view class="infoInput">
-         <input placeholder='Tap here to enter' value='{{personal.data.MobileNumber}}' bindinput='phoneInput' type='number'/>
-      </view>
-    </view>
-
-    <view class="info">   <!-- email -->
-      <text>E-mail</text>
-      <view class="infoInput">
-        <input placeholder='Tap here to enter' value='{{personal.data.EmailAddress}}' bindinput='emailInput' />
-      </view>
-    </view>
-
-
-    <view>
-      <button disabled='{{btnDisable}}' bindtap='infoSaveClick'>save</button>
+    <view class='edit'>
+      <button class='edit-info' bindtap='JumpToEdit'>Edit</button>
     </view>
   </view>
-
 </view> 

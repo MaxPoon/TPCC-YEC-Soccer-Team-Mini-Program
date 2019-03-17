@@ -1,29 +1,80 @@
 /* pages/me/me.wxss */
 .container {
   height: 100%;
-  width:100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between
+  padding: 10rpx;
 }
 
-.userinfo {
-  height:320rpx;
+.info-head {
+  height:270rpx;
   width: 100%;
   background-color: rgb(207, 207, 207);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
 }
 
-.userinfo text {
-  font-size: 50rpx;
+.userinfo-nickname {
+  font-size: 60rpx;
 }
 
 .userinfo-avatar {
   width: 150rpx;
   height: 150rpx;
-  margin: 35rpx;
   border-radius: 50%;
+  margin-top: 30rpx;
   border: 3rpx solid;
   border-color:black;
-  top: 80rpx;
 }
 
-.infoInput {
-  background-color: rgb(209, 209, 209);
+.info-body {
+  padding-top: 20rpx;
+  background-color: #ffffff;
+  padding-left: 80rpx;
+  padding-right: 80rpx;
+  border-top: 3rpx solid #000000;
+}
+
+.edit{
+  height:40px;
+  /* background-color: #8fb69b; */
+  width:750rpx;
+}
+.edit-info {
+  background-color: #ffffff;
+  height:40px;
+  width: 30%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: #73a96b;
+  font-size: 20px;
+} 
+.edit-info::after {
+  border: 0;
+}
+
+
+
+.info-display {
+  height: 130rpx;
+  background-color: #ffffff;
+  border-bottom: 3rpx solid #c7c7c7;
+  margin-left: 20rpx;
+  margin-right: 20rpx;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  justify-content: space-evenly;
+}
+
+.info-key {
+  font-size: 30rpx;
+}
+
+.info-value {
+  font-size: 50rpx;
 }
