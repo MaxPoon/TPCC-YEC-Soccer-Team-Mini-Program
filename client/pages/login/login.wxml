@@ -1,0 +1,2 @@
+<!--pages/login/login.wxml-->
+<button class="userinfo-nickname" open-type="getUserInfo" bindgetuserinfo="bindGetUserInfo">Login</button>
