@@ -20,6 +20,7 @@ router.put('/user', validationMiddleware, controllers.user.put)
 
 // Training API endpoints
 router.get('/training', controllers.training.get)
+router.post('/training', controllers.training.post)
 router.put('/training', controllers.training.put)
 
 // --- 图片上传 Demo --- //
