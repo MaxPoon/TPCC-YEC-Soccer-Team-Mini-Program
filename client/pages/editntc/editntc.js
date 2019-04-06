@@ -106,8 +106,6 @@ Page({
     var trainingTime = [e.detail.value.time[1]+10, e.detail.value.time[2]*10].join(':');
     var sendTime = util.formatTime(new Date());
     var methodType = Number(this.data.isAdd) ? 'POST':'PUT';
-    // console.log(this.data.isAdd);
-    // console.log(methodType);
     qcloud.request({
       url:'http://localhost:5757/weapp/training',
       method:methodType,
