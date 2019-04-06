@@ -11,33 +11,27 @@ Page({
     weather: "Mostly Cloudy",
     detailed: "Lower Field",
     time: "Sunday 14:00",
+    edit:'Edit',
     hid: true,
   },
   /**
    * 跳转到编辑页面
    */
-  JumpToEdit: function () {
-    wx.navigateTo({
-      url: '../editntc/editntc?isAdd=0'
-    })
-  },
-  JumpToAdd: function () {
-    wx.navigateTo({
-      url: '../editntc/editntc?isAdd=1'
-    })
-  },
-  ShowSuccessMsg: function(){
-    wx.showToast({
-      title: 'Success',
-      icon: 'succes',
-      duration: 1000,
-      mask: true
-    })
+  JumpTo: function () {
+    if(this.data.edit=='Edit'){
+      wx.navigateTo({
+        url: '../editntc/editntc?isAdd=0'
+      })
+    }else{
+      wx.navigateTo({
+        url: '../editntc/editntc?isAdd=1'
+      })
+    }
   },
   /**
    * 生命周期函数--监听页面加载
    */
-  onLoad: function (options) {
+  onShow: function (options) {
     var that = this;
     wx.request({
       url: 'http://api.openweathermap.org/data/2.5/weather?lat=1.29877&lon=103.77821&APPID=eeec1ae3008acaff7f53e89c77054165', //current weather in NUS information
@@ -82,6 +76,24 @@ Page({
             detailed:data.LocationDetail,
             time: dataAndTime
           })
+          var weekday = new Array(7);
+          weekday[0] = "Monday";
+          weekday[1] = "Tuesday";
+          weekday[2] = "Wednesday";
+          weekday[3] = "Thursday";
+          weekday[4] = "Friday";
+          weekday[5] = "Saturday";
+          weekday[6] = "Sunday";
+          var editDay = new Date(data.UpdatedTime).getDay();
+          var trainingDay = weekday.indexOf(data.Day)+1;
+          var trainingDate = new Date(data.UpdatedTime);
+          trainingDate.setDate(trainingDate.getDate()+trainingDay-editDay);
+          var currentDate = new Date();
+          if (currentDate > trainingDate){
+            that.setData({
+              edit: 'Add',
+            })
+          }
         }
       })
   },
@@ -96,9 +108,9 @@ Page({
   /**
    * 生命周期函数--监听页面显示
    */
-  onShow: function () {
+  // onShow: function () {
 
-  },
+  // },
 
   /**
    * 生命周期函数--监听页面隐藏

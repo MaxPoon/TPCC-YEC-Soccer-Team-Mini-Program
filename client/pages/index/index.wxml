@@ -1,11 +1,7 @@
 <!--index.wxml-->
 <view class='home-info'>
-  <view class='Add'>
-    <button class='new-notice' hidden='{{ hid }}' bindtap='JumpToAdd'>Add</button>
-    <!--function not added yet-->
-  </view>
   <view class='edit'>
-    <button class='edit-notice' hidden='{{ hid }}' bindtap='JumpToEdit'>Edit</button>
+    <button class='edit-notice' hidden='{{ hid }}' bindtap='JumpTo'>{{ edit }}</button>
   </view>
   <view class='weather'>
     <text class='weather-text'>{{ weather }}</text>
@@ -18,11 +14,5 @@
   </view>
   <view class='time'>
     <text>Training starts at {{ time }}</text>
-  </view>
-  <view class='formContainer'>
-    <form bindsubmit="formSubmit" report-submit>
-    <!--used to collect formld, formsubmit not defined yet-->
-    <button class='formSubmit__button' formType="submit" bindtap='ShowSuccessMsg'>Click to get next week's notifiction</button>
-    </form>
   </view>
 </view>

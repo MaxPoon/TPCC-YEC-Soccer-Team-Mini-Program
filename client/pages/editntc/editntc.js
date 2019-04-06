@@ -72,7 +72,12 @@ Page({
       ]
     ],
     multiIndex: [0, 0, 0],
-
+    isAdd : 0,
+  },
+  onLoad:function(options){
+    this.setData({
+      isAdd : options.isAdd
+    })
   },
   bindMultiPickerChange(e) {
     console.log('Time Choice', e.detail.value)
@@ -100,9 +105,12 @@ Page({
     }
     var trainingTime = [e.detail.value.time[1]+10, e.detail.value.time[2]*10].join(':');
     var sendTime = util.formatTime(new Date());
+    var methodType = Number(this.data.isAdd) ? 'POST':'PUT';
+    // console.log(this.data.isAdd);
+    // console.log(methodType);
     qcloud.request({
       url:'http://localhost:5757/weapp/training',
-      method:'PUT',
+      method:methodType,
       header: {
         'content-type': 'application/x-www-form-urlencoded'
       },
@@ -116,7 +124,6 @@ Page({
       success:function(res){
         console.log(res);
       }
-
     })
   },
 })
