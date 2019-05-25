@@ -3,7 +3,7 @@ const { mysql } = require('../qcloud.js');
 const trainingTableName = "Training";
 
 async function get(ctx) {
-  var memeory = await mysql(trainingTableName).select('*').limit(10);
+  var memeory = await mysql(trainingTableName).orderBy('UpdatedTime', 'desc').select('*').limit(10);
   ctx.body = memeory;
 }
 
