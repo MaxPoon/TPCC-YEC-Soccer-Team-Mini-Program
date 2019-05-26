@@ -1,11 +1,13 @@
 // pages/memories/memories.js
+const qcloud = require('wafer2-client-sdk');
+const app = getApp();
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-
+    trainings: []
   },
 
   /**
@@ -26,7 +28,21 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
-
+    var that = this;
+    qcloud.request({
+      url: 'http://localhost:5757/weapp/memeory',
+      method: 'GET',
+      header: {
+        'content-type': 'application/x-www-form-urlencoded'
+      },
+      success: function (res) {
+        var data = res.data;
+        that.setData({
+          trainings: data
+        })
+        console.log(that.data.trainings);
+      }
+    })
   },
 
   /**

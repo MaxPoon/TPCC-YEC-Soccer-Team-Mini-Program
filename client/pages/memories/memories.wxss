@@ -1,1 +1,68 @@
 /* pages/memories/memories.wxss */
+.page-title{
+  margin-top: 20px;
+  font-size: 18px;
+  text-align: center;
+}
+.search{
+  display: flex;
+  flex-direction: row;
+}
+.img{
+  width: 100%;
+}
+.menu{
+  display: flex;
+  flex-direction: row;
+  text-align: center;
+}
+.menu-item{
+  font-size: 12px;
+  margin-top: 15px;
+  width: 25%;
+}
+.hr{
+  height: 5px;
+  background-color: #ccc;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+.listhead{
+  display: flex;
+  flex-direction: row;
+  margin: 10px;
+  font-size: 13px;
+  color: #999;
+}
+.moresign{
+  position: absolute;
+  right: 10px;
+  color: #ccc;
+}
+.item{
+  display: flex;
+  flex-direction: row;
+  margin-left: 10px;
+  margin-bottom: 5px;
+}
+.desc{
+  margin-left: 10px;
+  line-height: 25px; 
+}
+.title{
+  font-weight: bold;
+}
+.count{
+  display: flex;
+  flex-direction: row;
+  font-size: 12px;
+  color: #999;
+}
+.views{
+  position: absolute;
+  left: 180px;
+}
+.comments{
+  position: absolute;
+  right: 10px;
+}
