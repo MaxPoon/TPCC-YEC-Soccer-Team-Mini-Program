@@ -18,52 +18,7 @@ Page({
       url: '../editntc/editntc'
     })
   },
-  /**
-   * sending notifications
-   */
-  SendNotification: function () {
-    qcloud.request({
-      url: 'https://api.weixin.qq.com/cgi-bin/token?grant_type=client_credential&appid=' + appid + '&secret=' + secret,
-      //get access_token using official acount's appid and secret
-      success: function (res) {
-        console.log(res);
-        TOKEN = res.data.access_token;
-        qcloud.request({
-          url: 'https://api.weixin.qq.com/cgi-bin/message/template/send?access_token=' + TOKEN,
-          //api used for official accounts to send template messages
-          header: {
-            'Content-Type': 'application/x-ww-form-urlencoded'
-          },
-          method: 'POST',
-          data: {
-            'touser': '',       //official account Openid
-            'template_id': '',   //state the used template
-
-            //others
-          },
-          success: function (res) {
-            console.log('successfully sent notifications; err:');
-          },
-          fail: function (err) {
-            // fail
-            console.log('failed to send notifications; err:');
-            console.log(err);
-          },
-          complete: function () {
-            // complete
-            console.log('complete sending notifications');
-          }
-        });
-      },
-      fail: function (err) {
-        console.log('failed to get token; err:');
-        console.log(err);
-      },
-      complete: function () {
-        console.log('complete qcloud.request for token');
-      }
-    });
-  },
+  
   /**
    * 生命周期函数--监听页面加载
    */

@@ -1,14 +1,8 @@
 <!--index.wxml-->
 <view class='home-info'>
-  <view class='buttons'>
-    <view class='notification'>
-      <button class='send-notification' bindtap='SendNotification'>Notification</button>
-    </view>
-    <view class='edit'>
-      <button class='edit-notice' bindtap='JumpToEdit'>Edit</button>
-    </view>
+  <view class='edit'>
+    <button class='edit-notice' bindtap='JumpToEdit'>Edit</button>
   </view>
-
   <view class='weather'>
     <text class='weather-text'>{{ weather }}</text>
   </view>
