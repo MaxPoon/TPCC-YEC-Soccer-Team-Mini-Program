@@ -1,6 +1,8 @@
 // pages/memories/memories.js
 const qcloud = require('wafer2-client-sdk');
+const config = require('../../config');
 const app = getApp();
+
 Page({
 
   /**
@@ -30,7 +32,7 @@ Page({
   onShow: function () {
     var that = this;
     qcloud.request({
-      url: config.service.memeoryUrl,
+      url: config.service.memoryUrl,
       method: 'GET',
       header: {
         'content-type': 'application/x-www-form-urlencoded'

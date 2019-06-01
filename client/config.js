@@ -24,8 +24,8 @@ var config = {
     // 上传图片接口
     uploadUrl: `${host}/weapp/upload`,
 
-    // Memeory api url
-    memeoryUrl: `${host}/weapp/memeory`
+    // Memory api url
+    memoryUrl: `${host}/weapp/memory`
   }
 };
 
