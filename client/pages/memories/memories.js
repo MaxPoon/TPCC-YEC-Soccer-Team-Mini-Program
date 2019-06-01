@@ -30,7 +30,7 @@ Page({
   onShow: function () {
     var that = this;
     qcloud.request({
-      url: 'http://localhost:5757/weapp/memeory',
+      url: config.service.memeoryUrl,
       method: 'GET',
       header: {
         'content-type': 'application/x-www-form-urlencoded'
@@ -40,7 +40,6 @@ Page({
         that.setData({
           trainings: data
         })
-        console.log(that.data.trainings);
       }
     })
   },
