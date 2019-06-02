@@ -107,7 +107,8 @@ Page({
     var sendTime = util.formatTime(new Date());
     var methodType = Number(this.data.isAdd) ? 'POST':'PUT';
     qcloud.request({
-      url:'http://localhost:5757/weapp/training',
+      // url:'http://localhost:5757/weapp/training',
+      url: 'https://aeoo5f7q.qcloud.la/weapp/training',
       method:methodType,
       header: {
         'content-type': 'application/x-www-form-urlencoded'
