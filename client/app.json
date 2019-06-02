@@ -4,7 +4,8 @@
     "pages/index/index",
     "pages/me/me",
     "pages/memories/memories",
-    "pages/editntc/editntc"
+    "pages/editntc/editntc",
+    "pages/editme/editme"
   ],
   "window":{
     "backgroundColor":"#73a96b",

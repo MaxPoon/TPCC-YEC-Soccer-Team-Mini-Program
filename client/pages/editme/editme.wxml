@@ -1,0 +1,42 @@
+<!-- pages/editme/editme.wxml -->
+<view class='edit-info'>
+  <view class='title'>
+    <text class='title-text'>Update personal information</text>
+  </view>
+  <view class="form-container">
+    <form class="notice-form" bindsubmit="formSubmit">
+      <view class="form-element">
+        <view class="section-title">Chinese name</view>
+        <input name="chinese-name" placeholder="{{this.data.chineseName}}" bindinput='chineseNameInput'/>
+      </view>
+      <view class="form-element">
+        <view class="section-title">English name</view>
+        <input name="english-name" placeholder="{{this.data.englishName}}" bindinput='englishNameInput'/>
+      </view>
+      <view class="form-element">
+        <view class="section-title">Mobile phone number</view>
+        <input name="chinese-name" placeholder="{{this.data.phone}}" bindinput='phoneInput'/>
+      </view>
+      <view class="form-element">
+        <view class="section-title">Email address</view>
+        <input name="chinese-name" placeholder="{{this.data.email}}" bindinput='emailInput'/>
+      </view>
+      <view class="form-element">
+        <view class="section-title">Birthday</view>
+        <picker
+          name="birthday"
+          mode="date"
+          value="{{this.data.birthday}}"
+          start=""
+          end=""
+          bindchange="bindBirthdayChange"
+        >
+          <view class="picker"> Birthday: {{birthday}} </view>
+        </picker>
+      </view>
+      <view class="btn-area">
+        <button class="submit-btn" form-type="submit" disabled='{{btnDisable}}'>Submit</button>
+      </view>
+    </form>
+  </view>
+</view>

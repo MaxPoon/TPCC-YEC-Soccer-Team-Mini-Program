@@ -1,0 +1,57 @@
+/* pages/editme/editme.wxss */
+.edit-notice{
+  width: 100%;
+  height: 1000px;
+  margin: 0px !important; 
+}
+
+.title{
+  width:100%;
+  height:50px;
+  background-color: #f6f6f6;
+  text-align: center;
+  padding-top:8px;
+  padding-bottom: 8px;
+  box-sizing: border-box;
+  border-bottom: 3rpx solid #e9e9e9;
+}
+
+.title-text{
+  width: 30%;
+  color: #707070;
+  font-size: 20px;
+  /* font-weight: bold; */
+}
+
+.form-container{
+  height:600px;
+  padding: 30px;
+}
+
+.form-element{
+  padding: 10px 0px 5px;
+  height:auto;
+  border-bottom: 3rpx solid #e9e9e9;
+}
+
+.section-title, {
+  box-sizing:border-box;
+}
+
+input{
+  width:auto;
+  float:left;
+  padding-top: 2px;
+}
+
+.picker {
+  padding-top: 10px;
+}
+
+.btn-area {
+  text-align: center;
+}
+
+.submit-btn {
+  width: 60%;
+}
