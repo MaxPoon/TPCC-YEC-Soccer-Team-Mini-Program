@@ -1,2 +1,18 @@
 <!--pages/memories/memories.wxml-->
-<text>pages/memories/memories.wxml</text>
+<view>
+  <view class='page-title'>Past Trainings</view>
+  <view class='hr'></view>
+  <block wx:for="{{trainings}}">
+    <view class='item' id='0'>
+      <view class='desc'>
+        <view class='title'>{{item.Location}}</view>
+        <view class='count'>
+          <view>{{item.LocationDetail}}</view>
+          <view class='views'>{{item.Day}}</view>
+          <view class='comments'>{{item.Time}}</view>
+        </view>
+      </view>
+    </view>
+    <view class='hr'></view>
+  </block>
+</view>
