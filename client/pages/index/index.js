@@ -33,15 +33,6 @@ Page({
    */
   onShow: function(options) {
     var that = this;
-    wx.request({
-      url: 'http://api.openweathermap.org/data/2.5/weather?lat=1.29877&lon=103.77821&APPID=eeec1ae3008acaff7f53e89c77054165', //current weather in NUS information
-      success(res) {
-        console.log(res.data.weather[0]);
-        that.setData({
-          weather: res.data.weather[0].description
-        });
-      }
-    });
     qcloud.request({
       // url: 'http://localhost:5757/weapp/user',
       url: 'https://aeoo5f7q.qcloud.la/weapp/user',
@@ -80,18 +71,20 @@ Page({
           detailed: data.LocationDetail,
           time: dataAndTime
         })
-        var weekday = new Array(7);
-        weekday[0] = "Monday";
-        weekday[1] = "Tuesday";
-        weekday[2] = "Wednesday";
-        weekday[3] = "Thursday";
-        weekday[4] = "Friday";
-        weekday[5] = "Saturday";
-        weekday[6] = "Sunday";
+        const weekday = [
+          "Monday",
+          "Tuesday",
+          "Wednesday",
+          "Thursday",
+          "Friday",
+          "Saturday",
+          "Sunday"
+        ];
         var editDay = new Date(data.UpdatedTime).getDay();
         var trainingDay = weekday.indexOf(data.Day) + 1;
         var trainingDate = new Date(data.UpdatedTime);
         trainingDate.setDate(trainingDate.getDate() + trainingDay - editDay);
+        trainingDate.setHours(parseInt(rowTime.slice(0, 3)), parseInt(rowTime.slice(3, 5)));
         var currentDate = new Date();
         if (currentDate > trainingDate) {
           that.setData({
@@ -102,6 +95,46 @@ Page({
             edit: 'Edit',
           })
         }
+        const usualLocation = {
+          'NUS': {
+            lat: 1.29877,
+            lon: 103.77821
+          },
+          'NTU': {
+            lat: 1.348934,
+            lon: 103.688587
+          },
+          'Nan Hua': {
+            lat: 1.308768,
+            lon: 103.769796
+          }
+        }
+        let lat = 1.29877;
+        let lon = 103.77821 //Default NUS
+        if (['NTU', 'Nan Hua'].includes(data.Location)){
+          lat = usualLocation[data.Location].lat;
+          lon = usualLocation[data.Location].lon;
+        }
+        wx.request({
+          url: `http://api.openweathermap.org/data/2.5/forecast?lat=${lat}&lon=${lon}&\APPID=eeec1ae3008acaff7f53e89c77054165`,
+          success(res) {
+            const weatherDataList = res.data.list;
+            const trainingDateNum = Math.floor(trainingDate / 1000);
+            if (weatherDataList[weatherDataList.length-1].dt <= trainingDateNum){
+              that.setData({
+                weather: ''
+              });
+              return;
+            } else {
+              const startTime = weatherDataList[0].dt;
+              const step = Math.round((trainingDateNum - startTime) / 10800);
+              const targetDate = startTime + 10800 * (step);
+              that.setData({
+                weather: weatherDataList[step].weather[0].description
+              });
+            }
+          }
+        });
       }
     })
   }

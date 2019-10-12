@@ -14,5 +14,7 @@
 	},
 	"appid": "wx13a399684987dfa0",
 	"projectname": "TPCC-YEC-Soccer-Team-Mini-Program",
+	"simulatorType": "wechat",
+	"simulatorPluginLibVersion": {},
 	"condition": {}
 }

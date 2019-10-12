@@ -23,7 +23,6 @@ router.get('/training', controllers.training.get)
 router.post('/training', controllers.training.post)
 router.put('/training', controllers.training.put)
 
-=======
 // Memory API endpoints
 router.get('/memory', controllers.memory.get)
 
