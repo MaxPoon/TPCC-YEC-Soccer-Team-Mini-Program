@@ -9,6 +9,15 @@
   height:60px;
   width:100%;
 }
+.new-notice {
+  background-color: #73a96b;
+  float:left;
+  width: 30%;
+  text-align: center;
+  color: #FFF;
+  padding-right: 10px;
+  font-size: 25px;
+} 
 .edit-notice {
   background-color: #73a96b;
   float:right;
@@ -18,15 +27,19 @@
   padding-right: 10px;
   font-size: 25px;
 } 
-.edit-notice::after {
+.edit-notice::after, .new-notice::after,  formSubmit__button::after{
   border: 0;
 }
+
 .weather {
   display:block;
   color: #FFF;
   padding-top: 20px;
   text-align: center;
   font-size: 40px;
+}
+.weather-text{
+  text-transform: capitalize;
 }
 .location {
   color: #FFF;
@@ -46,4 +59,7 @@
   text-align: center;
   margin-top: 20px;
   margin-bottom: 30px;
+}
+.formSubmit__button{
+  width:85%;
 }

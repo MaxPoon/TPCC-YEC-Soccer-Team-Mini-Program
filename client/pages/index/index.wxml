@@ -1,7 +1,7 @@
 <!--index.wxml-->
 <view class='home-info'>
   <view class='edit'>
-    <button class='edit-notice' bindtap='JumpToEdit'>Edit</button>
+    <button class='edit-notice' hidden='{{ hid }}' bindtap='JumpTo'>{{ edit }}</button>
   </view>
   <view class='weather'>
     <text class='weather-text'>{{ weather }}</text>

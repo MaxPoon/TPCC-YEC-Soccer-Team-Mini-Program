@@ -1,17 +1,17 @@
 {
-  "pages":[
+  "pages": [
     "pages/login/login",
     "pages/index/index",
     "pages/me/me",
     "pages/memories/memories",
     "pages/editntc/editntc"
   ],
-  "window":{
-    "backgroundColor":"#73a96b",
-    "backgroundTextStyle":"light",
+  "window": {
+    "backgroundColor": "#73a96b",
+    "backgroundTextStyle": "light",
     "navigationBarBackgroundColor": "#73a96b",
     "navigationBarTitleText": "TPCC YEC Soccer Team",
-    "navigationBarTextStyle":"black"
+    "navigationBarTextStyle": "black"
   },
   "tabBar": {
     "list": [
@@ -34,5 +34,6 @@
         "selectedIconPath": "pages/images/tabbar/active.png"
       }
     ]
-  }
+  },
+  "sitemapLocation": "sitemap.json"
 }
