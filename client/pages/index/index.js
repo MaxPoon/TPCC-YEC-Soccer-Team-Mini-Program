@@ -21,9 +21,9 @@ Page({
   /**
    * Jump to userlist page
    */
-  JumpToUserlist: function () {
+  JumpToUserslist: function () {
     wx.navigateTo({
-      url: '../userlist/userlist',
+      url: '../userslist/userslist',
     })
   },
   /**

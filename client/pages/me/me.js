@@ -1,6 +1,7 @@
 // pages/me/me.js
 const qcloud = require('wafer2-client-sdk');
 const app = getApp();
+const config = require('../../config');
 
 Page({
   data: {

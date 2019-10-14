@@ -5,7 +5,7 @@
     "pages/me/me",
     "pages/memories/memories",
     "pages/editntc/editntc",
-    "pages/userlist/userlist"
+    "pages/userslist/userslist"
   ],
   "window":{
     "backgroundColor":"#73a96b",

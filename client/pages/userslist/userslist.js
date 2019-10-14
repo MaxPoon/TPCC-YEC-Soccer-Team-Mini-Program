@@ -1,6 +1,7 @@
 // pages/userlist/userlist.js
 const qcloud = require('wafer2-client-sdk');
 const app = getApp();
+const config = require('../../config');
 
 Page({
 
@@ -8,14 +9,38 @@ Page({
    * 页面的初始数据
    */
   data: {
-    
+    //userslist info
+    userslist: []
   },
+
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    
+    console.log("onLoad userslist page");
+    this.getUserslist();
+  },
+
+  getUserslist: function (event) {
+    let that=this;
+    qcloud.request({
+      url: config.service.userUrl,
+      method: "GET",
+      success: function (res) {
+        // console.log(res);
+        console.log("Successfully gotten userslist.")
+        if(res.dara.code===0) {
+          that.setData({
+            // userslist: xxx
+          })
+        }
+      },
+      fail: function (err) {
+        console.log("Failed to get userslist.");
+        console.log(err);
+      }
+    });
   },
 
   /**

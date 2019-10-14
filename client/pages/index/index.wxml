@@ -16,6 +16,6 @@
     <text>Training starts at {{ time }}</text>
   </view>
   <view class='view-teammates'>
-    <button class='view-teammates-button' bindtap='JumpToUserlist'>View teammates</button>
+    <button class='view-teammates-button' bindtap='JumpToUserslist'>View teammates</button>
   </view>
 </view>
