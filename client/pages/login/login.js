@@ -5,26 +5,28 @@ const app = getApp();
 
 function successfulLoginCallback(res) {
   app.userInfo = res;
+  console.log(res);
   wx.switchTab({
     url: '../index/index',
   })
-  // qcloud.request({
-  //   url: config.service.userUrl + '?OpenId=' + app.userInfo.openId,
-  //   method: 'GET',
-  //   success: function (res) {
-  //     //able to get user's personal information from server
-  //     app.userInfo = Object.assign(app.userInfo, res.body);
-  //   },
-  //   fail: function (err) {
-  //     // fail
-  //     console.log('failed to get userinfo; err:');
-  //     console.log(err);
-  //   },
-  //   complete: function () {
-  //     // complete
-  //     console.log('complete qcloud.request for getting userinfo');
-  //   }
-  // });
+  qcloud.request({
+    url: config.service.userUrl + '?OpenId=' + app.userInfo.openId,
+    method: 'GET',
+    success: function (res) {
+      //able to get user's personal information from server
+      console.log(res);
+      app.userInfo = Object.assign(app.userInfo, res.body);
+    },
+    fail: function (err) {
+      // fail
+      console.log('failed to get userinfo; err:');
+      console.log(err);
+    },
+    complete: function () {
+      // complete
+      console.log('complete qcloud.request for getting userinfo');
+    }
+  });
 }
 
 Page({

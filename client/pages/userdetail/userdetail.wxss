@@ -1,0 +1,10 @@
+.userinfo{
+  align-content: center;
+  justify-content: center;
+}
+
+.userinfo-avatar{
+  width: 100rpx;
+  height: 100rpx;
+  margin: 20px;
+}

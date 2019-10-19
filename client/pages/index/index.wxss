@@ -47,3 +47,8 @@
   margin-top: 20px;
   margin-bottom: 30px;
 }
+.view-teammates-button {
+  width: 80%;
+  text-align: center;
+  color:#73a96b;
+}

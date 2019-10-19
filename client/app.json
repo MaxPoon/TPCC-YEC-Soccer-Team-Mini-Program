@@ -4,7 +4,9 @@
     "pages/index/index",
     "pages/me/me",
     "pages/memories/memories",
-    "pages/editntc/editntc"
+    "pages/editntc/editntc",
+    "pages/userdetail/userdetail",
+    "pages/userslist/userslist"
   ],
   "window":{
     "backgroundColor":"#73a96b",

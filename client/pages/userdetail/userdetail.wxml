@@ -1,0 +1,23 @@
+<!--pages/userdetail/userdetail.wxml-->
+<view class="container">
+
+
+  <view class="userinfo">   <!-- avatar and username -->
+    <image  class="userinfo-avatar" src="{{userdetail.avatar}}" mode="cover"></image>
+    <text class="userinfo-nickname">{{userdetail.name}}</text>
+  </view>
+
+
+  <view class="body">   <!-- info -->
+    <view class="info">   <!-- Chinese name -->
+      <!-- <text>Chinese name</text> -->
+      <!-- <text>{{userdetail.chinesename}}</text> -->
+    </view>
+    <view class="info">   <!-- English name -->
+      <!-- <text>English name</text> -->
+      <!-- <text>{{userdetail.englishname}}</text> -->
+    </view>
+  </view>
+
+
+</view> 
