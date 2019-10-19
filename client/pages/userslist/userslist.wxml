@@ -1,7 +1,7 @@
 <view class='userslist_wrap'>
-  <navigator class='user_item' wx:for='{{userslist}}' wx:key='{{index}}'>
+  <navigator class='user_item' url='../userdetail/userdetail?index={{index}}' wx:for='{{userslist}}' wx:key='{{OpenId}}'>
     <!-- avator -->
-    <image class='user_avator' src='{{item.avator}}'></image>
+    <image class='user_avatar' src='{{item.avatar}}'></image>
     <!-- name -->
     <text class='user_name'>{{item.name}}</text>
   </navigator>

@@ -10,17 +10,7 @@ Page({
    */
   data: {
     //userslist info
-    userslist: [
-      // for testing
-      // {
-      //   avator:"../images/tabbar/active.png",
-      //   name:"blablabla"
-      // },
-      // {
-      //   avator: "../images/tabbar/active.png",
-      //   name: "23333333"
-      // }
-    ]
+    userslist: []
   },
 
 
@@ -42,15 +32,20 @@ Page({
         // console.log(res);
         console.log("Successfully gotten userslist.")
         if(res.dara.code===0) {
-          that.setData({
-            // store all users' userinfo
+          app.setData({
             // userslist: res.data.xxx
-          })
+          });
         }
       },
       fail: function (err) {
         console.log("Failed to get userslist.");
         console.log(err);
+      },
+      complete: function() {
+        console.log("complete getting userslist.");
+        that.setData({
+          userslist: app.globalData.userslist
+        });
       }
     });
   },

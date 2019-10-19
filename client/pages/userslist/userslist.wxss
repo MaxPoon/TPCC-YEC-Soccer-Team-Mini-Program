@@ -1,4 +1,4 @@
-.user_avator {
+.user_avatar {
   width: 100rpx;
   height: 100rpx;
   border-radius: 50%;

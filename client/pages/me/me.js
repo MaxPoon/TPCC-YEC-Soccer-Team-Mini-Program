@@ -13,9 +13,7 @@ Page({
     btnDisable: true
   },
   onLoad: function () {
-    this.setData({
-      personal: app.userInfo
-    });
+    c
   },
 
   chineseNameInput: function (event) {
