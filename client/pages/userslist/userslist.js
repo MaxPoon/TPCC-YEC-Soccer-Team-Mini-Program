@@ -10,7 +10,16 @@ Page({
    */
   data: {
     //userslist info
-    userslist: []
+    userslist: [
+      {
+        avator:"../images/tabbar/active.png",
+        name:"blablabla"
+      },
+      {
+        avator: "../images/tabbar/active.png",
+        name: "23333333"
+      }
+    ]
   },
 
 
@@ -27,12 +36,13 @@ Page({
     qcloud.request({
       url: config.service.userUrl,
       method: "GET",
+      
       success: function (res) {
         // console.log(res);
         console.log("Successfully gotten userslist.")
         if(res.dara.code===0) {
           that.setData({
-            // userslist: xxx
+            // userslist: res.data.xxx
           })
         }
       },

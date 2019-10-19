@@ -1,0 +1,8 @@
+<view class='userslist_wrap'>
+  <navigator class='user_item' wx:for='{{userslist}}' wx:key='{{index}}'>
+    <!-- avator -->
+    <image class='user_avator' src='{{item.avator}}'></image>
+    <!-- name -->
+    <text class='user_name'>{{item.name}}</text>
+  </navigator>
+</view>
