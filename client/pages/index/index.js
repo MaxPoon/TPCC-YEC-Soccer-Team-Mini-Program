@@ -52,7 +52,7 @@ Page({
         if (data.length > 0) {
           var birthdayMsg = "Happy birthday ";
           if (data.length == 1) {
-            birthdayMsg += data[i].EnglishName + "(" + data[i].ChineseName + ")";
+            birthdayMsg += data[0].EnglishName + "(" + data[0].ChineseName + ")";
           } else {
             for (var i = 0; i < data.length; i++) {
               birthdayMsg += (data[i].EnglishName + "(" + data[i].ChineseName + ")");
