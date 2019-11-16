@@ -12,7 +12,9 @@ DROP TABLE IF EXISTS `User`;
 CREATE TABLE `User` (
   `OpenId` varchar(255) NOT NULL,
   `WechatName` varchar(255) NOT NULL,
-  `Birthday` date NOT NULL,
+  `BirthdayYear` smallint NOT NULL,
+  `BirthdayMonth` smallint NOT NULL,
+  `BirthdayDate` smallint NOT NULL,
   `ChineseName` varchar(255) DEFAULT NULL,
   `EnglishName` varchar(255) DEFAULT NULL,
   `EmailAddress` varchar(255) NOT NULL,
@@ -29,7 +31,7 @@ CREATE TABLE `User` (
 --
 ALTER TABLE `User`
   ADD PRIMARY KEY (`OpenId`),
-  ADD KEY `Name_Index` (`WechatName`),
-  ADD KEY `Birthday_Index` (`Birthday`);
+  ADD KEY `Name_Index` (`WechatName`);
+  -- ADD KEY `Birthday_Index` (`Birthday`)
 
 SET FOREIGN_KEY_CHECKS = 1;
