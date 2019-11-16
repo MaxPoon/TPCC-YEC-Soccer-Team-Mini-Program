@@ -25,7 +25,10 @@ var config = {
     uploadUrl: `${host}/weapp/upload`,
 
     // Memory api url
-    memoryUrl: `${host}/weapp/memory`
+    memoryUrl: `${host}/weapp/memory`,
+
+    // Birthday api url
+    birthdayUrl: `${host}/weapp/birthday`,
   }
 };
 

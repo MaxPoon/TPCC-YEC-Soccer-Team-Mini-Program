@@ -15,4 +15,7 @@
   <view class='time'>
     <text>Training starts at {{ time }}</text>
   </view>
+  <view class='birthdayMsg'>
+    <text>{{ birthdayMsg }}</text>
+  </view>
 </view>

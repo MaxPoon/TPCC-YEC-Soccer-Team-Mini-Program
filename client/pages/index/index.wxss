@@ -47,3 +47,10 @@
   margin-top: 20px;
   margin-bottom: 30px;
 }
+.birthdayMsg {
+  color: #FFF;
+  font-size: 16px;
+  text-align: center;
+  margin-top: 15px;
+  margin-bottom: 30px;
+}
