@@ -26,6 +26,9 @@ router.put('/training', controllers.training.put)
 // Memory API endpoints
 router.get('/memory', controllers.memory.get)
 
+// Birthday API endpoints
+router.get('/birthday', controllers.birthday.get)
+
 // --- 图片上传 Demo --- //
 // 图片上传接口，小程序端可以直接将 url 填入 wx.uploadFile 中
 router.post('/upload', controllers.upload)

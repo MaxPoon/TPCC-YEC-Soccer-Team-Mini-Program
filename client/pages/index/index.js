@@ -1,4 +1,8 @@
 //index.js
+const qcloud = require('wafer2-client-sdk');
+const config = require('../../config');
+const app = getApp();
+
 Page({
 
   /**
@@ -36,7 +40,41 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
-
+    var that = this;
+    qcloud.request({
+      url: config.service.birthdayUrl,
+      method: 'GET',
+      header: {
+        'content-type': 'application/x-www-form-urlencoded'
+      },
+      success: function(res) {
+        var data = res.data;
+        if (data.length > 0) {
+          var birthdayMsg = "Happy birthday ";
+          if (data.length == 1) {
+            birthdayMsg += data[0].EnglishName + "(" + data[0].ChineseName + ")";
+          } else {
+            for (var i = 0; i < data.length; i++) {
+              birthdayMsg += (data[i].EnglishName + "(" + data[i].ChineseName + ")");
+              if (i < data.length - 2) {
+                birthdayMsg += ", ";
+              } else if (i == data.length - 2) {
+                birthdayMsg += " and ";
+              } else {
+                birthdayMsg += "!";
+              }
+            }
+          }
+          that.setData({
+            birthdayMsg: birthdayMsg
+          })
+        }
+      },
+      fail: err => {
+        console.log("failed to get birthday");
+        console.error(err);
+      }
+    })
   },
 
   /**
